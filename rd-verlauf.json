@@ -1,0 +1,226 @@
+{
+  "schemaHinweis": "Jede Kategorie hat type 'single' oder 'multiple', oder mehrere groups mit eigenem type. Optionen: id, label (Button), text (Baustein). showWhen blendet eine Gruppe abhängig von einer anderen Gruppe derselben Kategorie ein.",
+  "meta": {
+    "title": "RD-Verlauf",
+    "subtitle": "Chronologischer Einsatzablauf",
+    "paragraphPrefix": "Einsatzverlauf: ",
+    "categoryJoiner": " // ",
+    "paragraphSuffix": "."
+  },
+  "categories": [
+    {
+      "id": "anfahrt",
+      "title": "Anfahrt",
+      "type": "single",
+      "options": [
+        { "id": "sondersignal", "label": "Mit Sondersignal", "text": "Anfahrt mit Sondersignal" },
+        { "id": "ohne_sondersignal", "label": "Ohne Sondersignal", "text": "Anfahrt ohne Sondersignal" }
+      ]
+    },
+    {
+      "id": "einweiser",
+      "title": "Einweiser",
+      "type": "single",
+      "options": [
+        { "id": "einweiser_vor_ort", "label": "Einweiser vor Ort", "text": "Einweiser vor Ort" },
+        { "id": "kein_einweiser", "label": "Kein Einweiser vor Ort", "text": "Kein Einweiser vor Ort" }
+      ]
+    },
+    {
+      "id": "personen_vor_ort",
+      "title": "Vor Ort angetroffene Personen",
+      "type": "multiple",
+      "options": [
+        { "id": "patient", "label": "Patient", "text": "Patient vor Ort angetroffen" },
+        { "id": "angehoerige", "label": "Angehörige", "text": "Angehörige vor Ort angetroffen" },
+        { "id": "pflegepersonal", "label": "Pflegepersonal", "text": "Pflegepersonal vor Ort angetroffen" },
+        { "id": "first_responder", "label": "First Responder", "text": "First Responder vor Ort angetroffen" },
+        { "id": "polizei", "label": "Polizei", "text": "Polizei vor Ort angetroffen" },
+        { "id": "feuerwehr", "label": "Feuerwehr", "text": "Feuerwehr vor Ort angetroffen" },
+        { "id": "arzt", "label": "Weiterer Arzt", "text": "Weiterer Arzt vor Ort angetroffen" },
+        { "id": "weiterer_rettungsdienst", "label": "Weiterer Rettungsdienst", "text": "Weiteres Rettungsdienstpersonal vor Ort angetroffen" },
+        { "id": "sonstige_personen", "label": "Sonstige Personen", "text": "Weitere Personen vor Ort angetroffen" }
+      ]
+    },
+    {
+      "id": "ausruestung",
+      "title": "Mitgenommene Ausrüstung",
+      "prefix": "Zum Patienten mitgenommen: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "ausruestung_mitgenommen",
+          "type": "multiple",
+          "options": [
+            { "id": "notfallrucksack", "label": "Notfallrucksack", "text": "Notfallrucksack" },
+            { "id": "ipad", "label": "iPad", "text": "iPad" },
+            { "id": "funkgeraet", "label": "Funkgerät", "text": "Funkgerät" },
+            { "id": "sauerstoff", "label": "Sauerstoff", "text": "Sauerstoff" },
+            { "id": "kindertasche", "label": "Kindertasche", "text": "Kindertasche" },
+            { "id": "geburtenset", "label": "Geburtenset", "text": "Geburtenset" },
+            { "id": "traumarucksack", "label": "Traumarucksack", "text": "Traumarucksack" },
+            { "id": "medikamenten_kuehltasche", "label": "Medikamenten-Kühltasche", "text": "Medikamenten-Kühltasche" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erstkontakt",
+      "title": "Erstkontakt und erste Beurteilung",
+      "type": "multiple",
+      "options": [
+        { "id": "erstgespraech", "label": "Erstgespräch", "text": "Erstgespräch mit dem Patienten geführt" },
+        { "id": "abcde", "label": "Beurteilung nach ABCDE", "text": "Erstbeurteilung nach ABCDE durchgeführt" }
+      ]
+    },
+    {
+      "id": "retts",
+      "title": "Beurteilung nach RETTS",
+      "type": "single",
+      "options": [
+        { "id": "retts_beurteilt", "label": "Patient nach RETTS beurteilt", "text": "Patient nach RETTS beurteilt" }
+      ]
+    },
+    {
+      "id": "anamnese_untersuchung",
+      "title": "Anamnese und weitere Untersuchung",
+      "type": "multiple",
+      "options": [
+        { "id": "sampler", "label": "SAMPLER-Anamnese", "text": "SAMPLER-Anamnese erhoben" },
+        { "id": "anamnese_patient", "label": "Weiteres Gespräch mit Patient", "text": "Weiteres Anamnesegespräch mit dem Patienten geführt" },
+        { "id": "anamnese_angehoerige", "label": "Anamnesegespräch mit Angehörigen", "text": "Anamnesegespräch mit Angehörigen geführt" }
+      ]
+    },
+    {
+      "id": "vitalwerte",
+      "title": "Vitalwerterhebung",
+      "type": "multiple",
+      "options": [
+        { "id": "ekg", "label": "EKG", "text": "EKG erhoben" },
+        { "id": "pulsoxymetrie", "label": "Pulsoxymetrie", "text": "Pulsoxymetrie durchgeführt" },
+        { "id": "blutdruck", "label": "Blutdruckmessung", "text": "Blutdruck gemessen" },
+        { "id": "kapnographie", "label": "Kapnographie", "text": "Kapnographie durchgeführt" },
+        { "id": "blutzucker", "label": "Blutzuckermessung", "text": "Blutzucker gemessen" },
+        { "id": "temperatur", "label": "Temperaturmessung", "text": "Temperatur gemessen" }
+      ]
+    },
+    {
+      "id": "weitere_informationen",
+      "title": "Weitere Informationsquellen",
+      "type": "multiple",
+      "options": [
+        { "id": "arztbriefe", "label": "Alte Arztbriefe einbezogen", "text": "Vorliegende Arztbriefe in die Informationsgewinnung einbezogen" },
+        { "id": "auskunft_angehoerige", "label": "Auskunft durch Angehörige", "text": "Zusätzliche Auskunft durch Angehörige eingeholt" },
+        { "id": "auskunft_pflegepersonal", "label": "Auskunft durch Pflegepersonal", "text": "Zusätzliche Auskunft durch Pflegepersonal eingeholt" },
+        { "id": "weitere_unterlagen", "label": "Weitere Unterlagen", "text": "Weitere vorliegende Unterlagen einbezogen" }
+      ]
+    },
+    {
+      "id": "aufklaerung",
+      "title": "Aufklärung des Patienten",
+      "prefix": "Patient über folgende Punkte aufgeklärt: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "aufklaerungspunkte",
+          "label": "Aufklärungspunkte",
+          "type": "multiple",
+          "options": [
+            { "id": "untersuchungsergebnisse", "label": "Untersuchungsergebnisse", "text": "Untersuchungsergebnisse" },
+            { "id": "ausbildungsstand", "label": "Ausbildungsstand des RD-Teams", "text": "Ausbildungsstand des RD-Teams" },
+            { "id": "versorgungsstellen", "label": "Alternative Versorgungsstellen", "text": "alternative Versorgungsstellen" },
+            { "id": "konsequenzen", "label": "Mögliche Konsequenzen der Entscheidung", "text": "mögliche Konsequenzen der Entscheidung" },
+            { "id": "weiteres_vorgehen", "label": "Weiteres Vorgehen", "text": "weiteres Vorgehen" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weiterer_verlauf",
+      "title": "Weiterer Verlauf",
+      "groupJoiner": " // ",
+      "groups": [
+        {
+          "id": "entscheidung",
+          "label": "Transportentscheidung",
+          "type": "single",
+          "options": [
+            { "id": "transport", "label": "Transport", "text": "Transport durchgeführt" },
+            { "id": "kein_transport", "label": "Kein Transport", "text": "Kein Transport durchgeführt" }
+          ]
+        },
+        {
+          "id": "transferart",
+          "label": "Transfer zum RTW",
+          "type": "single",
+          "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
+          "options": [
+            { "id": "zu_fuss", "label": "Zu Fuß", "text": "Transfer zum RTW zu Fuß erfolgt" },
+            { "id": "trage", "label": "Mit der Trage", "text": "Transfer zum RTW mit der Trage erfolgt" },
+            { "id": "tragstuhl", "label": "Mit dem Tragstuhl", "text": "Transfer zum RTW mit dem Tragstuhl erfolgt" }
+          ]
+        },
+        {
+          "id": "fahrt",
+          "label": "Fahrt",
+          "type": "single",
+          "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
+          "options": [
+            { "id": "fahrt_krankenhaus", "label": "Fahrt ins Krankenhaus", "text": "Fahrt ins Krankenhaus durchgeführt" },
+            { "id": "fahrt_ohne_komplikationen", "label": "Fahrt ohne Komplikationen", "text": "Fahrt ins Krankenhaus ohne Komplikationen verlaufen" }
+          ]
+        },
+        {
+          "id": "umlagerung",
+          "label": "Umlagerung auf Bett",
+          "type": "single",
+          "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
+          "options": [
+            { "id": "umlagerung_erfolgt", "label": "Umlagerung erfolgt", "text": "Umlagerung auf das Krankenhausbett erfolgt" },
+            { "id": "umlagerung_mitgeholfen", "label": "Bei Umlagerung geholfen", "text": "Bei der Umlagerung auf das Krankenhausbett mitgeholfen" }
+          ]
+        },
+        {
+          "id": "uebergabe_empfaenger",
+          "label": "Übergabe an",
+          "type": "multiple",
+          "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
+          "options": [
+            { "id": "uebergabe_arzt", "label": "Arzt", "text": "Arzt" },
+            { "id": "uebergabe_dgkp", "label": "DGKP", "text": "DGKP" },
+            { "id": "uebergabe_pflegepersonal", "label": "Weiteres Pflegepersonal", "text": "weiteres Pflegepersonal" }
+          ]
+        },
+        {
+          "id": "kein_transport_grund",
+          "label": "Verlauf ohne Transport",
+          "type": "single",
+          "showWhen": { "groupId": "entscheidung", "optionId": "kein_transport" },
+          "options": [
+            { "id": "transport_angeraten", "label": "Transport angeraten, abgelehnt", "text": "RD-Team rät zum Transport; Patient entscheidet sich nach Aufklärung dagegen" },
+            { "id": "belassung_empfohlen", "label": "Belassung empfohlen", "text": "RD-Team empfiehlt die Belassung; Patient verbleibt vor Ort" }
+          ]
+        },
+        {
+          "id": "weitere_uebergabe",
+          "label": "Weitere Betreuung übergeben an",
+          "type": "multiple",
+          "showWhen": { "groupId": "entscheidung", "optionId": "kein_transport" },
+          "options": [
+            { "id": "angehoerige_uebernahme", "label": "Angehörige", "text": "Weitere Betreuung an Angehörige übergeben" },
+            { "id": "pflegepersonal_uebernahme", "label": "Pflegepersonal", "text": "Weitere Betreuung an das Pflegepersonal übergeben" },
+            { "id": "patient_bleibt", "label": "Patient verbleibt vor Ort", "text": "Patient verbleibt vor Ort" }
+          ]
+        },
+        {
+          "id": "einsatzende",
+          "label": "Abschluss",
+          "type": "single",
+          "options": [
+            { "id": "einsatzende", "label": "Einsatzende", "text": "Einsatzende" }
+          ]
+        }
+      ]
+    }
+  ]
+}
