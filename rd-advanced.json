@@ -1,0 +1,257 @@
+{
+  "schemaHinweis": "Jede Kategorie hat type 'single' oder 'multiple', oder mehrere groups mit eigenem type. Optionen: id, label (Button), text (Baustein). exclusive: true wählt die Option allein und hebt andere der Gruppe auf. showWhen blendet eine Gruppe nur ein, wenn in groupId die optionId gewählt ist.",
+  "meta": {
+    "title": "RD-trauma",
+    "subtitle": "Traumaeinsatz · Blutungsräume, Verletzungen, CCR",
+    "paragraphPrefix": "Traumauntersuchung: ",
+    "categoryJoiner": ". ",
+    "paragraphSuffix": "."
+  },
+  "categories": [
+    {
+      "id": "blutungsraeume",
+      "title": "Blutungsräume",
+      "prefix": "Blutungsräume: ",
+      "groupJoiner": "; ",
+      "groups": [
+        {
+          "id": "brust",
+          "label": "Brust",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Thorax klinisch ohne Hinweis auf relevanten Blutverlust" },
+            { "id": "auffaellig", "label": "auffällig", "text": "" }
+          ]
+        },
+        {
+          "id": "brust_detail",
+          "label": "Brust — Befund",
+          "type": "multiple",
+          "showWhen": { "groupId": "brust", "optionId": "auffaellig" },
+          "options": [
+            { "id": "haemo_re", "label": "V. a. Hämothorax re", "text": "V. a. Hämothorax rechts" },
+            { "id": "haemo_li", "label": "V. a. Hämothorax li", "text": "V. a. Hämothorax links" },
+            { "id": "instabil", "label": "instabiler Thorax", "text": "instabiler Thorax" },
+            { "id": "aeusserlich", "label": "äußere Blutung", "text": "äußere Thoraxblutung" }
+          ]
+        },
+        {
+          "id": "bauch",
+          "label": "Bauch",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Abdomen klinisch ohne Hinweis auf intraabdominelle Blutung" },
+            { "id": "auffaellig", "label": "auffällig", "text": "" }
+          ]
+        },
+        {
+          "id": "bauch_detail",
+          "label": "Bauch — Befund",
+          "type": "multiple",
+          "showWhen": { "groupId": "bauch", "optionId": "auffaellig" },
+          "options": [
+            { "id": "intraabdominell", "label": "V. a. intraabdominelle Blutung", "text": "V. a. intraabdominelle Blutung" },
+            { "id": "gespannt", "label": "gespanntes Abdomen", "text": "Abdomen gespannt" },
+            { "id": "aeusserlich", "label": "äußere Blutung", "text": "äußere Abdominalblutung" }
+          ]
+        },
+        {
+          "id": "becken",
+          "label": "Becken",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Becken stabil, klinisch ohne Hinweis auf relevante Blutung" },
+            { "id": "auffaellig", "label": "auffällig", "text": "" }
+          ]
+        },
+        {
+          "id": "becken_detail",
+          "label": "Becken — Befund",
+          "type": "multiple",
+          "showWhen": { "groupId": "becken", "optionId": "auffaellig" },
+          "options": [
+            { "id": "instabil", "label": "Becken instabil", "text": "Becken instabil" },
+            { "id": "va_blutung", "label": "V. a. Beckenblutung", "text": "V. a. relevante Beckenblutung" },
+            { "id": "aeusserlich", "label": "äußere Blutung", "text": "äußere Becken-/Perinealblutung" }
+          ]
+        },
+        {
+          "id": "beine",
+          "label": "Beine",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "untere Extremitäten ohne Hinweis auf relevanten Blutverlust" },
+            { "id": "auffaellig", "label": "auffällig", "text": "" }
+          ]
+        },
+        {
+          "id": "beine_detail",
+          "label": "Beine — Befund",
+          "type": "multiple",
+          "showWhen": { "groupId": "beine", "optionId": "auffaellig" },
+          "options": [
+            { "id": "os_re", "label": "V. a. OS-Blutung re", "text": "V. a. Oberschenkelblutung rechts" },
+            { "id": "os_li", "label": "V. a. OS-Blutung li", "text": "V. a. Oberschenkelblutung links" },
+            { "id": "os_bds", "label": "V. a. OS-Blutung bds.", "text": "V. a. Oberschenkelblutung beidseits" },
+            { "id": "aeusserlich", "label": "äußere Blutung", "text": "äußere Blutung der Beine" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "verletzungen",
+      "title": "Verletzungen",
+      "prefix": "Verletzungen: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "uebersicht",
+          "label": "Verletzungsmuster",
+          "type": "multiple",
+          "options": [
+            { "id": "keine", "label": "keine äußerlichen Verletzungen", "text": "keine äußerlichen Verletzungen", "exclusive": true },
+            { "id": "sht", "label": "SHT", "text": "V. a. SHT" },
+            { "id": "hws", "label": "HWS", "text": "V. a. HWS-Verletzung" },
+            { "id": "thorax", "label": "Thorax", "text": "Thoraxtrauma" },
+            { "id": "abdomen", "label": "Abdomen", "text": "stumpfes/penetrierendes Abdominaltrauma" },
+            { "id": "becken", "label": "Becken", "text": "Beckentrauma" },
+            { "id": "extremitaet_oben", "label": "obere Extremität", "text": "Verletzung der oberen Extremität" },
+            { "id": "extremitaet_unten", "label": "untere Extremität", "text": "Verletzung der unteren Extremität" },
+            { "id": "weichteil", "label": "Weichteil", "text": "Weichteilverletzung" },
+            { "id": "verbrennung", "label": "Verbrennung", "text": "Verbrennung/Verbrühung" },
+            { "id": "amputation", "label": "Amputation", "text": "Amputationsverletzung" }
+          ]
+        },
+        {
+          "id": "sht_detail",
+          "label": "SHT — Details",
+          "type": "multiple",
+          "showWhen": { "groupId": "uebersicht", "optionId": "sht" },
+          "options": [
+            { "id": "geschlossen", "label": "geschlossen", "text": "geschlossen" },
+            { "id": "offen", "label": "offen", "text": "offen" },
+            { "id": "wunde", "label": "Kopfplatzwunde", "text": "Kopfplatzwunde" },
+            { "id": "haematotympanon", "label": "Hämatotympanon", "text": "Hämatotympanon" },
+            { "id": "brille", "label": "Brillenhämatom", "text": "Brillenhämatom" }
+          ]
+        },
+        {
+          "id": "extremitaet_detail",
+          "label": "Extremität — Details",
+          "type": "multiple",
+          "showWhen": { "groupId": "uebersicht", "optionId": "extremitaet_unten" },
+          "options": [
+            { "id": "geschlossen", "label": "geschlossene Fraktur", "text": "V. a. geschlossene Fraktur" },
+            { "id": "offen", "label": "offene Fraktur", "text": "offene Fraktur" },
+            { "id": "fehlstellung", "label": "Fehlstellung", "text": "Fehlstellung" },
+            { "id": "neurovaskulaer_intakt", "label": "periphere Durchblutung/Sensibilität/Motorik intakt", "text": "DSM distal intakt" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blutverduennung",
+      "title": "Blutverdünnung",
+      "prefix": "Antikoagulation/Thrombozytenhemmung: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "status",
+          "type": "single",
+          "options": [
+            { "id": "nein", "label": "nein", "text": "keine" },
+            { "id": "ja", "label": "ja", "text": "ja (einfach)" },
+            { "id": "dual", "label": "dual", "text": "duale Plättchenhemmung/Antikoagulation" }
+          ]
+        },
+        {
+          "id": "mittel_einfach",
+          "label": "Welches Medikament?",
+          "type": "multiple",
+          "showWhen": { "groupId": "status", "optionId": "ja" },
+          "options": [
+            { "id": "ass", "label": "ASS", "text": "ASS" },
+            { "id": "clopidogrel", "label": "Clopidogrel", "text": "Clopidogrel" },
+            { "id": "doak", "label": "DOAK", "text": "DOAK" },
+            { "id": "marcumar", "label": "Marcumar/VKA", "text": "Vitamin-K-Antagonist" },
+            { "id": "heparin", "label": "Heparin", "text": "Heparin" },
+            { "id": "unbekannt", "label": "unbekannt", "text": "Substanz unbekannt" }
+          ]
+        },
+        {
+          "id": "mittel_dual",
+          "label": "Welche Kombination?",
+          "type": "multiple",
+          "showWhen": { "groupId": "status", "optionId": "dual" },
+          "options": [
+            { "id": "ass_clopi", "label": "ASS + Clopidogrel", "text": "ASS und Clopidogrel" },
+            { "id": "ass_doak", "label": "ASS + DOAK", "text": "ASS und DOAK" },
+            { "id": "dapt_sonst", "label": "sonstige Dualtherapie", "text": "sonstige Dualtherapie" },
+            { "id": "unbekannt", "label": "unbekannt", "text": "Kombination unbekannt" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ccr",
+      "title": "Canadian C-Spine Rule",
+      "prefix": "Canadian C-Spine Rule: ",
+      "groupJoiner": "; ",
+      "groups": [
+        {
+          "id": "hochrisiko",
+          "label": "Hochrisikokriterium?",
+          "type": "single",
+          "options": [
+            { "id": "nein", "label": "nein", "text": "kein Hochrisikokriterium" },
+            { "id": "ja", "label": "ja", "text": "" }
+          ]
+        },
+        {
+          "id": "hochrisiko_welche",
+          "label": "Welche Hochrisikokriterien?",
+          "type": "multiple",
+          "showWhen": { "groupId": "hochrisiko", "optionId": "ja" },
+          "options": [
+            { "id": "alter", "label": "Alter ≥ 65", "text": "Hochrisiko Alter ≥ 65 J., HWS-Immobilisation/Bildgebung indiziert" },
+            { "id": "mechanismus", "label": "gefährlicher Mechanismus", "text": "Hochrisiko gefährlicher Mechanismus, HWS-Immobilisation/Bildgebung indiziert" },
+            { "id": "paraesthesie", "label": "Parästhesien", "text": "Hochrisiko Parästhesien der Extremitäten, HWS-Immobilisation/Bildgebung indiziert" }
+          ]
+        },
+        {
+          "id": "niedrigrisiko",
+          "label": "Mindestens ein Niedrigrisikokriterium (erlaubt ROM-Prüfung)?",
+          "type": "single",
+          "showWhen": { "groupId": "hochrisiko", "optionId": "nein" },
+          "options": [
+            { "id": "ja", "label": "ja", "text": "Niedrigrisikokriterium vorhanden" },
+            { "id": "nein", "label": "nein", "text": "kein Niedrigrisikokriterium, HWS-Immobilisation/Bildgebung indiziert" }
+          ]
+        },
+        {
+          "id": "niedrigrisiko_welche",
+          "label": "Welche Niedrigrisikokriterien?",
+          "type": "multiple",
+          "showWhen": { "groupId": "niedrigrisiko", "optionId": "ja" },
+          "options": [
+            { "id": "heckkollision", "label": "einfache Heckkollision", "text": "einfache Heckkollision" },
+            { "id": "sitzend", "label": "sitzend angetroffen", "text": "sitzend angetroffen" },
+            { "id": "gehfaehig", "label": "zwischenzeitlich gehfähig", "text": "zwischenzeitlich gehfähig" },
+            { "id": "verzoegert", "label": "verzögerter Nackenschmerz", "text": "verzögerter Nackenschmerzbeginn" },
+            { "id": "keine_mittellinie", "label": "keine Mittellinien-Druckdolenz", "text": "keine Druckdolenz der HWS-Mittellinie" }
+          ]
+        },
+        {
+          "id": "rotation",
+          "label": "Aktive Rotation 45° beidseits möglich?",
+          "type": "single",
+          "showWhen": { "groupId": "niedrigrisiko", "optionId": "ja" },
+          "options": [
+            { "id": "ja", "label": "ja", "text": "aktive HWS-Rotation 45° bds. möglich, CCR erfüllt, keine Bildgebung nach CCR" },
+            { "id": "nein", "label": "nein", "text": "Rotation 45° nicht möglich, Bildgebung indiziert" }
+          ]
+        }
+      ]
+    }
+  ]
+}

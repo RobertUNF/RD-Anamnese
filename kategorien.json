@@ -1,0 +1,283 @@
+{
+  "schemaHinweis": "Jede Kategorie hat type 'single' oder 'multiple', oder mehrere groups mit eigenem type. Optionen: id, label (Button), text (Baustein). exclusive: true wählt die Option allein und hebt andere der Gruppe auf. showWhen blendet eine Gruppe nur ein, wenn in groupId die optionId gewählt ist.",
+  "meta": {
+    "title": "RD-intern",
+    "subtitle": "Internistischer Einsatz · körperliche Untersuchung",
+    "paragraphPrefix": "Status praesens: ",
+    "categoryJoiner": ". ",
+    "paragraphSuffix": "."
+  },
+  "categories": [
+    {
+      "id": "az_ez",
+      "title": "AZ / EZ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "az",
+          "label": "Allgemeinzustand",
+          "type": "single",
+          "options": [
+            { "id": "gut", "label": "gut", "text": "AZ gut" },
+            { "id": "vermindert", "label": "vermindert", "text": "AZ vermindert" },
+            { "id": "stark_vermindert", "label": "stark vermindert", "text": "AZ deutlich vermindert" }
+          ]
+        },
+        {
+          "id": "ez",
+          "label": "Ernährungszustand",
+          "type": "single",
+          "options": [
+            { "id": "normal", "label": "normal", "text": "EZ normal" },
+            { "id": "adipoes", "label": "adipös", "text": "EZ adipös" },
+            { "id": "kachektisch", "label": "kachektisch", "text": "EZ kachektisch" },
+            { "id": "athletisch", "label": "athletisch", "text": "EZ athletisch" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hautbeschaffenheit",
+      "title": "Hautbeschaffenheit",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "farbe",
+          "label": "Farbe",
+          "type": "multiple",
+          "options": [
+            { "id": "normal", "label": "normal", "text": "Hautfarbe unauffällig", "exclusive": true },
+            { "id": "blass", "label": "blass", "text": "Hautfarbe blass" },
+            { "id": "zyanotisch", "label": "zyanotisch", "text": "Hautfarbe zyanotisch" },
+            { "id": "geroetet", "label": "gerötet", "text": "Hautfarbe gerötet" },
+            { "id": "ikterisch", "label": "ikterisch", "text": "Hautfarbe ikterisch" },
+            { "id": "spider", "label": "Spider-Nävi", "text": "Spider-Nävi erkennbar" }
+          ]
+        },
+        {
+          "id": "temperatur",
+          "label": "Temperatur / Feuchtigkeit",
+          "type": "multiple",
+          "options": [
+            { "id": "warm_trocken", "label": "warm-trocken", "text": "Haut warm-trocken", "exclusive": true },
+            { "id": "warm", "label": "warm", "text": "Haut warm" },
+            { "id": "kalt", "label": "kalt", "text": "Haut kalt" },
+            { "id": "feucht", "label": "feucht", "text": "Haut feucht" },
+            { "id": "schweissig", "label": "schweißig", "text": "Haut schweißig" }
+          ]
+        },
+        {
+          "id": "turgor",
+          "label": "Turgor",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Turgor unauffällig" },
+            { "id": "stehende_falten", "label": "stehende Hautfalten", "text": "stehende Hautfalten" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "augen",
+      "title": "Augen",
+      "prefix": "Augen: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "skleren",
+          "label": "Skleren & Konjunktiven",
+          "type": "multiple",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Skleren und Konjunktiven unauffällig", "exclusive": true },
+            { "id": "ikterus", "label": "Ikterus", "text": "ikterische Skleren" },
+            { "id": "blass", "label": "blass / anämisch", "text": "Konjunktiven blass/anämisch" },
+            { "id": "entzuendet", "label": "Entzündung", "text": "Konjunktiven entzündet" }
+          ]
+        },
+        {
+          "id": "bulbus",
+          "label": "Bulbusstellung",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "kein Ex-/Enophthalmus" },
+            { "id": "exophthalmus", "label": "Exophthalmus", "text": "Exophthalmus" },
+            { "id": "enophthalmus", "label": "Enophthalmus", "text": "Enophthalmus" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mund_rachen",
+      "title": "Mund & Rachen",
+      "type": "single",
+      "options": [
+        { "id": "bland", "label": "unauffällig (bland)", "text": "Mund- und Rachenschleimhaut bland" },
+        { "id": "blass", "label": "blass", "text": "Mund- und Rachenschleimhaut blass (anämisch)" },
+        { "id": "zyanotisch", "label": "zyanotisch", "text": "Mund- und Rachenschleimhaut zyanotisch" },
+        { "id": "geroetet", "label": "gerötet", "text": "Mund- und Rachenschleimhaut gerötet (entzündet)" }
+      ]
+    },
+    {
+      "id": "zunge",
+      "title": "Zunge",
+      "prefix": "Zunge: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "feuchtigkeit",
+          "type": "single",
+          "options": [
+            { "id": "feucht", "label": "feucht", "text": "feucht" },
+            { "id": "trocken", "label": "trocken", "text": "trocken" }
+          ]
+        },
+        {
+          "id": "belag",
+          "label": "Belag",
+          "type": "single",
+          "options": [
+            { "id": "kein", "label": "nicht belegt", "text": "nicht belegt" },
+            { "id": "weisslich", "label": "weißlich belegt", "text": "weißlich belegt" },
+            { "id": "gelblich", "label": "gelblich belegt", "text": "gelblich belegt" },
+            { "id": "erdbeere", "label": "Erdbeerzunge", "text": "Erdbeerzunge" }
+          ]
+        },
+        {
+          "id": "motorik",
+          "label": "Motorik",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "Motorik unauffällig", "text": "Motorik unauffällig" },
+            { "id": "li", "label": "Abweichung links", "text": "Abweichung nach links" },
+            { "id": "re", "label": "Abweichung rechts", "text": "Abweichung nach rechts" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abdomen",
+      "title": "Abdomen",
+      "prefix": "Abdomen: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "Inspektion",
+          "label": "Inspektion",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Inspektion unauffällig" },
+            { "id": "geblaeht", "label": "gebläht", "text": "Abdomen gebläht" },
+            { "id": "adipoes", "label": "adipös", "text": "stark adipös" },
+            { "id": "aszites", "label": "Aszites", "text": "inspektorisch V. a. Aszites" }
+          ]
+        },
+        {
+          "id": "Auskultation",
+          "label": "Auskultation",
+          "type": "single",
+          "options": [
+            { "id": "lebhaft", "label": "lebhaft", "text": "Darmgeräusche lebhaft" },
+            { "id": "vermindert", "label": "vermindert", "text": "Darmgeräusche vermindert" },
+            { "id": "metallisch", "label": "metallisch", "text": "Darmgeräusche metallisch" },
+            { "id": "fehlend", "label": "fehlend", "text": "Darmgeräusche fehlend" }
+          ]
+        },
+        {
+          "id": "druckdolenz",
+          "label": "Druckdolenz?",
+          "type": "single",
+          "options": [
+            { "id": "nein", "label": "Nein", "text": "keine Druckdolenz" },
+            { "id": "ja", "label": "Ja", "text": "" }
+          ]
+        },
+        {
+          "id": "druckdolenz_region",
+          "label": "Wo ist die Druckdolenz auffällig?",
+          "type": "multiple",
+          "showWhen": { "groupId": "druckdolenz", "optionId": "ja" },
+          "options": [
+            { "id": "rechter_oberer_quadrant", "label": "Rechter oberer Quadrant", "text": "rechter oberer Quadrant druckdolent" },
+            { "id": "linker_oberer_quadrant", "label": "Linker oberer Quadrant", "text": "linker oberer Quadrant druckdolent" },
+            { "id": "rechter_unterer_quadrant", "label": "Rechter unterer Quadrant", "text": "rechter unterer Quadrant druckdolent" },
+            { "id": "linker_unterer_quadrant", "label": "Linker unterer Quadrant", "text": "linker unterer Quadrant druckdolent" },
+            { "id": "diffus", "label": "Diffus", "text": "gesamtes Abdomen diffus druckdolent" }
+          ]
+        },
+        {
+          "id": "palpation_weitere",
+          "label": "Weitere Palpationsbefunde",
+          "type": "multiple",
+          "options": [
+            { "id": "weich", "label": "Bauchdecke weich", "text": "Bauchdecke weich", "exclusive": true },
+            { "id": "abwehrspannung", "label": "Abwehrspannung", "text": "Abwehrspannung vorhanden" },
+            { "id": "raumforderung", "label": "Raumforderung", "text": "Resistenz/Raumforderung palpabel" },
+            { "id": "milz", "label": "Milz tastbar", "text": "Milz unter Rippenbogen palpabel" }
+          ]
+        },
+        {
+          "id": "appendix",
+          "label": "Appendix-Druckpunkte",
+          "type": "multiple",
+          "options": [
+            { "id": "unauffaellig", "label": "nicht druckdolent", "text": "Appendix-Druckpunkte nicht dolent", "exclusive": true },
+            { "id": "entfernt", "label": "Appendektomie", "text": "St. p. Appendektomie", "exclusive": true },
+            { "id": "druckdolent", "label": "druckdolent", "text": "Lanz- und McBurney-Punkt druckdolent" },
+            { "id": "loslassschmerz", "label": "kontralateraler Loslassschmerz", "text": "kontralateraler Loslassschmerz vorhanden" }
+          ]
+        },
+        {
+          "id": "weitere_befunde",
+          "label": "Weitere Auffälligkeiten",
+          "type": "multiple",
+          "options": [
+            { "id": "keine", "label": "keine weiteren", "text": "", "exclusive": true },
+            { "id": "narben", "label": "OP-Narben", "text": "OP-Narben erkennbar" },
+            { "id": "caput_medusa", "label": "Caput medusae", "text": "Caput medusae" },
+            { "id": "nabel_hernien", "label": "Nabelhernie", "text": "Umbilikalhernie vorhanden" },
+            { "id": "leisten_hernien", "label": "Leistenhernie", "text": "Inguinalhernie vorhanden" },
+            { "id": "sonstige_hernien", "label": "sonstige Hernie", "text": "Hernie vorhanden" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stauungszeichen",
+      "title": "Stauungszeichen",
+      "prefix": "Stauungszeichen: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "halsvenen",
+          "label": "Obere Einflussstauung",
+          "type": "single",
+          "options": [
+            { "id": "nicht_gestaut", "label": "Halsvenen nicht gestaut", "text": "keine obere Einflussstauung" },
+            { "id": "gestaut", "label": "Halsvenen gestaut", "text": "obere Einflussstauung, Halsvenen prall gefüllt" }
+          ]
+        },
+        {
+          "id": "oedeme",
+          "label": "Ödeme",
+          "type": "single",
+          "options": [
+            { "id": "keine", "label": "keine", "text": "keine Ödeme" },
+            { "id": "vorhanden", "label": "vorhanden", "text": "" }
+          ]
+        },
+        {
+          "id": "oedeme_lokal",
+          "label": "Ödemlokalisation",
+          "type": "multiple",
+          "showWhen": { "groupId": "oedeme", "optionId": "vorhanden" },
+          "options": [
+            { "id": "unterschenkel", "label": "Unterschenkel", "text": "Unterschenkelödeme" },
+            { "id": "praetibial", "label": "prätibial", "text": "prätibiale Ödeme" },
+            { "id": "sakral", "label": "sakral", "text": "sakrale Ödeme" },
+            { "id": "generalisiert", "label": "generalisiert", "text": "generalisierte Ödeme" }
+          ]
+        }
+      ]
+    }
+  ]
+}

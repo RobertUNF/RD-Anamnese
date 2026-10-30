@@ -1,0 +1,1169 @@
+{
+  "schemaHinweis": "Jede Kategorie hat type 'single' oder 'multiple', oder mehrere groups mit eigenem type. Optionen: id, label (Button), text (Baustein). exclusive: true wählt die Option allein und hebt andere der Gruppe auf. showWhen blendet eine Gruppe nur ein, wenn in groupId die optionId gewählt ist.",
+  "meta": {
+    "title": "Klinischer Status",
+    "subtitle": "Vollständiger Status praesens nach PKU-Bogen",
+    "paragraphPrefix": "Status praesens: ",
+    "categoryJoiner": ". ",
+    "paragraphSuffix": "."
+  },
+  "categories": [
+    {
+      "id": "az_ez",
+      "title": "AZ / EZ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "az",
+          "label": "Allgemeinzustand",
+          "type": "single",
+          "options": [
+            { "id": "gut", "label": "gut", "text": "AZ gut" },
+            { "id": "vermindert", "label": "vermindert", "text": "AZ vermindert" },
+            { "id": "stark_vermindert", "label": "stark vermindert", "text": "AZ deutlich vermindert" }
+          ]
+        },
+        {
+          "id": "ez",
+          "label": "Ernährungszustand",
+          "type": "single",
+          "options": [
+            { "id": "normal", "label": "normal", "text": "EZ normal" },
+            { "id": "adipoes", "label": "adipös", "text": "EZ adipös" },
+            { "id": "kachektisch", "label": "kachektisch", "text": "EZ kachektisch" },
+            { "id": "athletisch", "label": "athletisch", "text": "EZ athletisch" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bewusstsein",
+      "title": "Bewusstsein",
+      "prefix": "Bewusstsein: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "quantitativ",
+          "label": "Quantitativ / GCS",
+          "type": "single",
+          "options": [
+            { "id": "gcs15", "label": "wach, GCS 15", "text": "wach, GCS 15" },
+            { "id": "gcs13_14", "label": "GCS 13–14", "text": "GCS 13–14" },
+            { "id": "gcs9_12", "label": "GCS 9–12", "text": "GCS 9–12" },
+            { "id": "gcs3_8", "label": "GCS ≤ 8", "text": "GCS ≤ 8" }
+          ]
+        },
+        {
+          "id": "qualitativ",
+          "label": "Qualitativ",
+          "type": "single",
+          "options": [
+            { "id": "wach", "label": "wach", "text": "wach" },
+            { "id": "somnolent", "label": "somnolent", "text": "somnolent" },
+            { "id": "sopor", "label": "soporös", "text": "soporös" },
+            { "id": "komatoes", "label": "komatös", "text": "komatös" }
+          ]
+        },
+        {
+          "id": "orientierung",
+          "label": "Orientierung (P/O/Z/S)",
+          "type": "multiple",
+          "options": [
+            { "id": "allseits", "label": "allseits orientiert", "text": "allseits orientiert", "exclusive": true },
+            { "id": "person", "label": "zur Person eingeschränkt", "text": "zur Person desorientiert" },
+            { "id": "ort", "label": "örtlich eingeschränkt", "text": "örtlich desorientiert" },
+            { "id": "zeit", "label": "zeitlich eingeschränkt", "text": "zeitlich desorientiert" },
+            { "id": "situation", "label": "situativ eingeschränkt", "text": "situativ desorientiert" },
+            { "id": "nicht_pruefbar", "label": "nicht prüfbar", "text": "Orientierung nicht prüfbar", "exclusive": true }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hautbeschaffenheit",
+      "title": "Hautbeschaffenheit",
+      "prefix": "Haut: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "farbe",
+          "label": "Farbe",
+          "type": "multiple",
+          "options": [
+            { "id": "normal", "label": "normal", "text": "Farbe unauffällig", "exclusive": true },
+            { "id": "blass", "label": "blass", "text": "blass" },
+            { "id": "zyanotisch", "label": "zyanotisch", "text": "zyanotisch" },
+            { "id": "geroetet", "label": "gerötet", "text": "gerötet" },
+            { "id": "ikterisch", "label": "ikterisch", "text": "ikterisch" },
+            { "id": "spider", "label": "Spider-Nävi", "text": "Spider-Nävi" }
+          ]
+        },
+        {
+          "id": "temperatur",
+          "label": "Temperatur / Feuchtigkeit",
+          "type": "multiple",
+          "options": [
+            { "id": "warm_trocken", "label": "warm-trocken", "text": "warm-trocken", "exclusive": true },
+            { "id": "kalt", "label": "kalt", "text": "kalt" },
+            { "id": "feucht", "label": "feucht", "text": "feucht" },
+            { "id": "schweissig", "label": "schweißig", "text": "schweißig" }
+          ]
+        },
+        {
+          "id": "turgor",
+          "label": "Turgor",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Turgor unauffällig" },
+            { "id": "stehende_falten", "label": "stehende Hautfalten", "text": "stehende Hautfalten" }
+          ]
+        },
+        {
+          "id": "weitere",
+          "label": "Weitere Hautbefunde",
+          "type": "multiple",
+          "options": [
+            { "id": "keine", "label": "keine weiteren", "text": "", "exclusive": true },
+            { "id": "narben", "label": "Narben", "text": "Narben" },
+            { "id": "naevi", "label": "Nävi", "text": "Nävi" },
+            { "id": "effloreszenzen", "label": "Effloreszenzen", "text": "Effloreszenzen" },
+            { "id": "haematom", "label": "Hämatome", "text": "Hämatome" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nn_mastoid",
+      "title": "NNH & Mastoid",
+      "prefix": "NNH/Mastoid: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "klopfschmerz",
+          "type": "multiple",
+          "options": [
+            { "id": "frei", "label": "nicht klopfschmerzhaft", "text": "Stirnhöhlen, NNH und Mastoid nicht klopfschmerzhaft", "exclusive": true },
+            { "id": "stirn", "label": "Stirnhöhlen klopfschmerzhaft", "text": "Stirnhöhlen klopfschmerzhaft" },
+            { "id": "nnn", "label": "NNH klopfschmerzhaft", "text": "NNH klopfschmerzhaft" },
+            { "id": "mastoid", "label": "Mastoid klopfschmerzhaft", "text": "Mastoid klopfschmerzhaft" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trigeminus",
+      "title": "Trigeminusaustrittspunkte",
+      "type": "single",
+      "options": [
+        { "id": "unauffaellig", "label": "nicht druckdolent", "text": "Trigeminusaustrittspunkte nicht druckdolent" },
+        { "id": "druckdolent", "label": "druckdolent", "text": "Trigeminusaustrittspunkte druckdolent" }
+      ]
+    },
+    {
+      "id": "augen",
+      "title": "Augen",
+      "prefix": "Augen: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "skleren",
+          "label": "Skleren & Konjunktiven",
+          "type": "multiple",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Skleren und Konjunktiven unauffällig", "exclusive": true },
+            { "id": "ikterus", "label": "Ikterus", "text": "ikterische Skleren" },
+            { "id": "blass", "label": "blass / anämisch", "text": "Konjunktiven blass/anämisch" },
+            { "id": "entzuendet", "label": "Entzündung", "text": "Konjunktiven entzündet" }
+          ]
+        },
+        {
+          "id": "bulbus",
+          "label": "Bulbusstellung",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "kein Ex-/Enophthalmus" },
+            { "id": "exophthalmus", "label": "Exophthalmus", "text": "Exophthalmus" },
+            { "id": "enophthalmus", "label": "Enophthalmus", "text": "Enophthalmus" }
+          ]
+        },
+        {
+          "id": "pupillen",
+          "label": "Pupillen",
+          "type": "single",
+          "options": [
+            { "id": "isokor", "label": "isokor, lichtreagibel", "text": "Pupillen isokor, direkt und indirekt prompt lichtreagibel" },
+            { "id": "anisokor", "label": "anisokor", "text": "Pupillen anisokor" },
+            { "id": "lichtstarr", "label": "lichtstarr", "text": "Pupillen lichtstarr" },
+            { "id": "eng", "label": "beidseits eng", "text": "Pupillen beidseits eng" },
+            { "id": "weit", "label": "beidseits weit", "text": "Pupillen beidseits weit" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hals_lk",
+      "title": "Halslymphknoten",
+      "prefix": "Hals-LK: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "tastbar",
+          "type": "single",
+          "options": [
+            { "id": "nicht_vergroessert", "label": "nicht vergrößert", "text": "nicht vergrößert palpabel" },
+            { "id": "vergroessert", "label": "vergrößert", "text": "vergrößert" }
+          ]
+        },
+        {
+          "id": "beschaffenheit",
+          "label": "Beschaffenheit",
+          "type": "multiple",
+          "showWhen": { "groupId": "tastbar", "optionId": "vergroessert" },
+          "options": [
+            { "id": "verschieblich", "label": "verschieblich", "text": "verschieblich" },
+            { "id": "derb", "label": "derb", "text": "derb" },
+            { "id": "druckdolent", "label": "druckdolent", "text": "druckdolent" },
+            { "id": "retroaurikulaer", "label": "retroaurikulär", "text": "retroaurikulär" },
+            { "id": "kieferwinkel", "label": "Kieferwinkel", "text": "Kieferwinkel" },
+            { "id": "submandibulaer", "label": "submandibulär", "text": "submandibulär" },
+            { "id": "zervikal", "label": "zervikal", "text": "zervikal" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "schilddruese",
+      "title": "Schilddrüse",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "befund",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Schilddrüse unauffällig" },
+            { "id": "vergroessert", "label": "vergrößert", "text": "Schilddrüse vergrößert" },
+            { "id": "knotig", "label": "knotig", "text": "Schilddrüse knotig" }
+          ]
+        },
+        {
+          "id": "schluck",
+          "label": "Schluckverschieblichkeit",
+          "type": "single",
+          "options": [
+            { "id": "ja", "label": "schluckverschieblich", "text": "schluckverschieblich" },
+            { "id": "nein", "label": "nicht schluckverschieblich", "text": "nicht schluckverschieblich" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mund_rachen",
+      "title": "Mund & Rachen",
+      "prefix": "Mund/Rachen: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "schleimhaut",
+          "label": "Schleimhaut",
+          "type": "single",
+          "options": [
+            { "id": "bland", "label": "unauffällig (bland)", "text": "Schleimhaut bland" },
+            { "id": "blass", "label": "blass", "text": "Schleimhaut blass (anämisch)" },
+            { "id": "zyanotisch", "label": "zyanotisch", "text": "Schleimhaut zyanotisch" },
+            { "id": "geroetet", "label": "gerötet", "text": "Schleimhaut gerötet (entzündet)" }
+          ]
+        },
+        {
+          "id": "foetor",
+          "label": "Foetor ex ore",
+          "type": "single",
+          "options": [
+            { "id": "kein", "label": "kein", "text": "kein Foetor ex ore" },
+            { "id": "vorhanden", "label": "vorhanden", "text": "Foetor ex ore" },
+            { "id": "aceton", "label": "acetonämisch", "text": "Foetor acetonämisch" },
+            { "id": "leber", "label": "Foetor hepaticus", "text": "Foetor hepaticus" },
+            { "id": "alkohol", "label": "alkoholisch", "text": "Foetor nach Alkohol" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zahnstatus",
+      "title": "Zahnstatus",
+      "prefix": "Zahnstatus: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "sanierung",
+          "type": "single",
+          "options": [
+            { "id": "saniert", "label": "Gebiss saniert", "text": "Gebiss saniert" },
+            { "id": "sanierungsbeduerftig", "label": "sanierungsbedürftig", "text": "Gebiss sanierungsbedürftig" }
+          ]
+        },
+        {
+          "id": "vollstaendigkeit",
+          "type": "single",
+          "options": [
+            { "id": "vollstaendig", "label": "vollständig", "text": "vollständig" },
+            { "id": "teilweise", "label": "teilweise erhalten", "text": "teilweise erhalten" }
+          ]
+        },
+        {
+          "id": "prothese",
+          "label": "Prothese",
+          "type": "multiple",
+          "options": [
+            { "id": "keine", "label": "keine Prothese", "text": "keine Prothese", "exclusive": true },
+            { "id": "teil_ok", "label": "Teilprothese OK", "text": "Teilprothese Oberkiefer" },
+            { "id": "teil_uk", "label": "Teilprothese UK", "text": "Teilprothese Unterkiefer" },
+            { "id": "proth_ok", "label": "Prothese OK", "text": "Prothese Oberkiefer" },
+            { "id": "proth_uk", "label": "Prothese UK", "text": "Prothese Unterkiefer" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zunge",
+      "title": "Zunge",
+      "prefix": "Zunge: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "feuchtigkeit",
+          "type": "single",
+          "options": [
+            { "id": "feucht", "label": "feucht", "text": "feucht" },
+            { "id": "trocken", "label": "trocken", "text": "trocken" }
+          ]
+        },
+        {
+          "id": "belag",
+          "label": "Belag",
+          "type": "single",
+          "options": [
+            { "id": "kein", "label": "nicht belegt", "text": "nicht belegt" },
+            { "id": "weisslich", "label": "weißlich belegt", "text": "weißlich belegt" },
+            { "id": "gelblich", "label": "gelblich belegt", "text": "gelblich belegt" },
+            { "id": "erdbeere", "label": "Erdbeerzunge", "text": "Erdbeerzunge" }
+          ]
+        },
+        {
+          "id": "motorik",
+          "label": "Motorik",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "Motorik unauffällig", "text": "Motorik unauffällig" },
+            { "id": "li", "label": "Abweichung links", "text": "Abweichung nach links" },
+            { "id": "re", "label": "Abweichung rechts", "text": "Abweichung nach rechts" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tonsillen",
+      "title": "Tonsillen",
+      "prefix": "Tonsillen: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "status",
+          "type": "single",
+          "options": [
+            { "id": "bland", "label": "vorhanden, bland", "text": "vorhanden, bland" },
+            { "id": "geroetet", "label": "gerötet", "text": "gerötet" },
+            { "id": "vergroessert", "label": "vergrößert", "text": "vergrößert" },
+            { "id": "stippchen", "label": "Stippchen", "text": "mit Stippchen" },
+            { "id": "te", "label": "St. p. TE", "text": "St. p. Tonsillektomie" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stauungszeichen",
+      "title": "Stauungszeichen",
+      "prefix": "Stauungszeichen: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "halsvenen",
+          "label": "Obere Einflussstauung",
+          "type": "single",
+          "options": [
+            { "id": "nicht_gestaut", "label": "Halsvenen nicht gestaut", "text": "keine obere Einflussstauung" },
+            { "id": "gestaut", "label": "Halsvenen gestaut", "text": "obere Einflussstauung, Halsvenen prall gefüllt" }
+          ]
+        },
+        {
+          "id": "oedeme",
+          "label": "Ödeme",
+          "type": "single",
+          "options": [
+            { "id": "keine", "label": "keine", "text": "keine Ödeme" },
+            { "id": "vorhanden", "label": "vorhanden", "text": "" }
+          ]
+        },
+        {
+          "id": "oedeme_lokal",
+          "label": "Ödemlokalisation",
+          "type": "multiple",
+          "showWhen": { "groupId": "oedeme", "optionId": "vorhanden" },
+          "options": [
+            { "id": "unterschenkel", "label": "Unterschenkel", "text": "Unterschenkelödeme" },
+            { "id": "praetibial", "label": "prätibial", "text": "prätibiale Ödeme" },
+            { "id": "sakral", "label": "sakral", "text": "sakrale Ödeme" },
+            { "id": "generalisiert", "label": "generalisiert", "text": "generalisierte Ödeme" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thorax",
+      "title": "Thorax",
+      "prefix": "Thorax: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "form",
+          "label": "Form",
+          "type": "single",
+          "options": [
+            { "id": "symmetrisch", "label": "symmetrisch", "text": "Form symmetrisch" },
+            { "id": "fassthorax", "label": "Fassthorax", "text": "Fassthorax" },
+            { "id": "trichterbrust", "label": "Trichterbrust", "text": "Trichterbrust" },
+            { "id": "kielbrust", "label": "Kielbrust", "text": "Kielbrust" }
+          ]
+        },
+        {
+          "id": "kompression",
+          "label": "Thoraxkompression",
+          "type": "single",
+          "options": [
+            { "id": "schmerzfrei", "label": "nicht schmerzhaft", "text": "Thoraxkompression nicht schmerzhaft" },
+            { "id": "schmerzhaft", "label": "schmerzhaft", "text": "Thoraxkompression schmerzhaft" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wirbelsaeule",
+      "title": "Wirbelsäule",
+      "prefix": "WS: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "form",
+          "label": "Form",
+          "type": "multiple",
+          "options": [
+            { "id": "symmetrisch", "label": "symmetrisch", "text": "symmetrisch", "exclusive": true },
+            { "id": "skoliose", "label": "Skoliose", "text": "Skoliose" },
+            { "id": "kyphose", "label": "Kyphose", "text": "Kyphose" },
+            { "id": "gibbus", "label": "Gibbus", "text": "Gibbus" }
+          ]
+        },
+        {
+          "id": "klopfschmerz",
+          "label": "Klopfschmerz",
+          "type": "single",
+          "options": [
+            { "id": "kein", "label": "nicht klopfschmerzhaft", "text": "nicht klopfschmerzhaft" },
+            { "id": "hws", "label": "HWS", "text": "HWS klopfschmerzhaft" },
+            { "id": "bws", "label": "BWS", "text": "BWS klopfschmerzhaft" },
+            { "id": "lws", "label": "LWS", "text": "LWS klopfschmerzhaft" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nierenlager",
+      "title": "Nierenlager",
+      "type": "single",
+      "options": [
+        { "id": "frei", "label": "bds. frei", "text": "Nierenlager bds. frei, nicht klopfschmerzhaft" },
+        { "id": "re", "label": "re klopfschmerzhaft", "text": "Nierenlager rechts klopfschmerzhaft" },
+        { "id": "li", "label": "li klopfschmerzhaft", "text": "Nierenlager links klopfschmerzhaft" },
+        { "id": "bds", "label": "bds. klopfschmerzhaft", "text": "Nierenlager bds. klopfschmerzhaft" }
+      ]
+    },
+    {
+      "id": "lunge",
+      "title": "Lunge",
+      "prefix": "Lunge: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "af",
+          "label": "Atemfrequenz",
+          "type": "single",
+          "options": [
+            { "id": "eupnoe", "label": "Eupnoe", "text": "Eupnoe" },
+            { "id": "tachypnoe", "label": "Tachypnoe", "text": "Tachypnoe" },
+            { "id": "bradypnoe", "label": "Bradypnoe", "text": "Bradypnoe" }
+          ]
+        },
+        {
+          "id": "auskultation",
+          "label": "Auskultation",
+          "type": "single",
+          "options": [
+            { "id": "vesikulaer", "label": "Vesikuläratmen seitengleich", "text": "Vesikuläratmen seitengleich" },
+            { "id": "rg", "label": "Rasselgeräusche", "text": "" },
+            { "id": "abgeschwaecht", "label": "abgeschwächt", "text": "Atemgeräusch abgeschwächt" },
+            { "id": "fehlend", "label": "fehlend", "text": "Atemgeräusch fehlend" }
+          ]
+        },
+        {
+          "id": "rg_art",
+          "label": "Art der RG",
+          "type": "multiple",
+          "showWhen": { "groupId": "auskultation", "optionId": "rg" },
+          "options": [
+            { "id": "feucht_fein", "label": "feucht, feinblasig", "text": "feucht feinblasige RG" },
+            { "id": "feucht_grob", "label": "feucht, grobblasig", "text": "feucht grobblasige RG" },
+            { "id": "trocken", "label": "trocken", "text": "trockene RG" },
+            { "id": "re", "label": "rechts", "text": "rechts" },
+            { "id": "li", "label": "links", "text": "links" },
+            { "id": "bds", "label": "beidseits", "text": "beidseits" }
+          ]
+        },
+        {
+          "id": "perkussion",
+          "label": "Perkussion",
+          "type": "single",
+          "options": [
+            { "id": "sonor", "label": "sonorer Klopfschall seitengleich", "text": "sonorer Klopfschall seitengleich" },
+            { "id": "gedaempft", "label": "gedämpft", "text": "Klopfschall gedämpft" },
+            { "id": "hypersonor", "label": "hypersonor", "text": "Klopfschall hypersonor" }
+          ]
+        },
+        {
+          "id": "atemverschieblichkeit",
+          "label": "Atemverschieblichkeit",
+          "type": "single",
+          "options": [
+            { "id": "frei", "label": "bds. frei", "text": "Atemverschieblichkeit bds. frei" },
+            { "id": "vermindert", "label": "vermindert", "text": "Atemverschieblichkeit vermindert" }
+          ]
+        },
+        {
+          "id": "stimmfremitus",
+          "label": "Stimmfremitus",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Stimmfremitus unauffällig" },
+            { "id": "verstaerkt", "label": "verstärkt", "text": "Stimmfremitus verstärkt" },
+            { "id": "vermindert", "label": "vermindert", "text": "Stimmfremitus vermindert" }
+          ]
+        },
+        {
+          "id": "bronchophonie",
+          "label": "Bronchophonie",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Bronchophonie unauffällig" },
+            { "id": "verstaerkt", "label": "verstärkt", "text": "Bronchophonie verstärkt" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "herz",
+      "title": "Herz",
+      "prefix": "Herz: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "frequenz",
+          "label": "Frequenz",
+          "type": "single",
+          "options": [
+            { "id": "normofrequent", "label": "normofrequent", "text": "normofrequent" },
+            { "id": "tachykard", "label": "tachykard", "text": "tachykard" },
+            { "id": "bradykard", "label": "bradykard", "text": "bradykard" }
+          ]
+        },
+        {
+          "id": "rhythmus",
+          "label": "Rhythmus",
+          "type": "single",
+          "options": [
+            { "id": "rhythmisch", "label": "rhythmisch", "text": "rhythmisch" },
+            { "id": "arrhythmisch", "label": "arrhythmisch", "text": "arrhythmisch" }
+          ]
+        },
+        {
+          "id": "auskultation",
+          "label": "Auskultation",
+          "type": "single",
+          "options": [
+            { "id": "rein", "label": "reine Herztöne", "text": "reine Herztöne" },
+            { "id": "geraeusch", "label": "Herzgeräusch", "text": "" }
+          ]
+        },
+        {
+          "id": "geraeusch_art",
+          "label": "Herzgeräusch",
+          "type": "multiple",
+          "showWhen": { "groupId": "auskultation", "optionId": "geraeusch" },
+          "options": [
+            { "id": "systolikum", "label": "Systolikum", "text": "Systolikum" },
+            { "id": "diastolikum", "label": "Diastolikum", "text": "Diastolikum" },
+            { "id": "carotiden", "label": "Weiterleitung in Carotiden", "text": "mit Fortleitung in die Carotiden" },
+            { "id": "dritter", "label": "3. Herzton", "text": "3. Herzton" }
+          ]
+        },
+        {
+          "id": "spitzenstoss",
+          "label": "Herzspitzenstoß",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Herzspitzenstoß unauffällig" },
+            { "id": "hebend", "label": "hebend", "text": "Herzspitzenstoß hebend" },
+            { "id": "verlagert", "label": "verlagert", "text": "Herzspitzenstoß verlagert" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abdomen",
+      "title": "Abdomen",
+      "prefix": "Abdomen: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "Inspektion",
+          "label": "Inspektion",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Inspektion unauffällig" },
+            { "id": "geblaeht", "label": "gebläht", "text": "gebläht" },
+            { "id": "adipoes", "label": "adipös", "text": "stark adipös" },
+            { "id": "aszites", "label": "Aszites", "text": "inspektorisch V. a. Aszites" }
+          ]
+        },
+        {
+          "id": "perkussion",
+          "label": "Perkussion",
+          "type": "single",
+          "options": [
+            { "id": "tympanitisch", "label": "tympanitisch", "text": "Perkussion tympanitisch" },
+            { "id": "gedaempft", "label": "gedämpft (Aszites?)", "text": "Perkussion gedämpft, V. a. Aszites" }
+          ]
+        },
+        {
+          "id": "Auskultation",
+          "label": "Darmgeräusche",
+          "type": "single",
+          "options": [
+            { "id": "lebhaft", "label": "lebhaft, alle Quadranten", "text": "Darmgeräusche lebhaft in allen Quadranten" },
+            { "id": "vermindert", "label": "vermindert", "text": "Darmgeräusche vermindert" },
+            { "id": "metallisch", "label": "metallisch", "text": "Darmgeräusche metallisch" },
+            { "id": "fehlend", "label": "fehlend", "text": "Darmgeräusche fehlend" }
+          ]
+        },
+        {
+          "id": "druckdolenz",
+          "label": "Druckdolenz?",
+          "type": "single",
+          "options": [
+            { "id": "nein", "label": "Nein", "text": "keine Druckdolenz" },
+            { "id": "ja", "label": "Ja", "text": "" }
+          ]
+        },
+        {
+          "id": "druckdolenz_region",
+          "label": "Wo ist die Druckdolenz auffällig?",
+          "type": "multiple",
+          "showWhen": { "groupId": "druckdolenz", "optionId": "ja" },
+          "options": [
+            { "id": "rechter_oberer_quadrant", "label": "Rechter oberer Quadrant", "text": "rechter oberer Quadrant druckdolent" },
+            { "id": "linker_oberer_quadrant", "label": "Linker oberer Quadrant", "text": "linker oberer Quadrant druckdolent" },
+            { "id": "rechter_unterer_quadrant", "label": "Rechter unterer Quadrant", "text": "rechter unterer Quadrant druckdolent" },
+            { "id": "linker_unterer_quadrant", "label": "Linker unterer Quadrant", "text": "linker unterer Quadrant druckdolent" },
+            { "id": "diffus", "label": "Diffus", "text": "gesamtes Abdomen diffus druckdolent" }
+          ]
+        },
+        {
+          "id": "palpation_weitere",
+          "label": "Palpation",
+          "type": "multiple",
+          "options": [
+            { "id": "weich", "label": "Bauchdecke weich", "text": "Bauchdecke weich, keine Abwehrspannung", "exclusive": true },
+            { "id": "abwehrspannung", "label": "Abwehrspannung", "text": "Abwehrspannung" },
+            { "id": "raumforderung", "label": "Resistenz", "text": "Resistenz palpabel" }
+          ]
+        },
+        {
+          "id": "leber",
+          "label": "Leber",
+          "type": "single",
+          "options": [
+            { "id": "am_rippenbogen", "label": "am Rippenbogen", "text": "Lebergrenze am Rippenbogen" },
+            { "id": "vergroessert", "label": "vergrößert", "text": "Leber vergrößert tastbar" },
+            { "id": "derb", "label": "derb/verhärtet", "text": "Leber derb tastbar" }
+          ]
+        },
+        {
+          "id": "milz",
+          "label": "Milz",
+          "type": "single",
+          "options": [
+            { "id": "nicht_tastbar", "label": "nicht palpabel", "text": "Milz nicht palpabel" },
+            { "id": "tastbar", "label": "palpabel", "text": "Milz palpabel" }
+          ]
+        },
+        {
+          "id": "appendix",
+          "label": "Appendix-Druckpunkte",
+          "type": "multiple",
+          "options": [
+            { "id": "unauffaellig", "label": "nicht druckdolent", "text": "McBurney und Lanz nicht dolent", "exclusive": true },
+            { "id": "entfernt", "label": "Appendektomie", "text": "St. p. Appendektomie", "exclusive": true },
+            { "id": "druckdolent", "label": "druckdolent", "text": "Lanz- und McBurney-Punkt druckdolent" },
+            { "id": "loslassschmerz", "label": "kontralateraler Loslassschmerz", "text": "kontralateraler Loslassschmerz" }
+          ]
+        },
+        {
+          "id": "hernien",
+          "label": "Hernien",
+          "type": "multiple",
+          "options": [
+            { "id": "keine", "label": "keine", "text": "keine Hernien", "exclusive": true },
+            { "id": "umbilikal", "label": "Umbilikalhernie", "text": "Umbilikalhernie" },
+            { "id": "inguinal", "label": "Inguinalhernie", "text": "Inguinalhernie" },
+            { "id": "narben", "label": "Narbenhernie", "text": "Narbenhernie" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mammae",
+      "title": "Mammae",
+      "prefix": "Mammae: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "befund",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "bds. unauffällig", "text": "Inspektion und Palpation bds. unauffällig" },
+            { "id": "auffaellig", "label": "auffällig", "text": "" },
+            { "id": "nicht_untersucht", "label": "nicht untersucht", "text": "nicht untersucht" }
+          ]
+        },
+        {
+          "id": "detail",
+          "label": "Auffälligkeit",
+          "type": "multiple",
+          "showWhen": { "groupId": "befund", "optionId": "auffaellig" },
+          "options": [
+            { "id": "knoten", "label": "Knoten", "text": "Knoten palpabel" },
+            { "id": "sekretion", "label": "Sekretion", "text": "Mamillensekretion" },
+            { "id": "asymmetrie", "label": "Asymmetrie", "text": "Asymmetrie" },
+            { "id": "lk", "label": "regionäre LK auffällig", "text": "regionäre Lymphknoten auffällig" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lk_axillaer",
+      "title": "Lymphknoten axillär",
+      "type": "single",
+      "options": [
+        { "id": "unauffaellig", "label": "unauffällig", "text": "axilläre Lymphknoten unauffällig" },
+        { "id": "vergroessert", "label": "vergrößert", "text": "axilläre Lymphknoten vergrößert" }
+      ]
+    },
+    {
+      "id": "lk_inguinal",
+      "title": "Lymphknoten inguinal",
+      "type": "single",
+      "options": [
+        { "id": "unauffaellig", "label": "unauffällig", "text": "inguinale Lymphknoten unauffällig" },
+        { "id": "vergroessert", "label": "vergrößert", "text": "inguinale Lymphknoten vergrößert" }
+      ]
+    },
+    {
+      "id": "varizen",
+      "title": "Varizen",
+      "type": "single",
+      "options": [
+        { "id": "keine", "label": "keine", "text": "keine Varizen" },
+        { "id": "vorhanden", "label": "vorhanden", "text": "Varizen vorhanden" }
+      ]
+    },
+    {
+      "id": "pulse",
+      "title": "Pulse",
+      "prefix": "Pulse: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "status",
+          "type": "multiple",
+          "options": [
+            { "id": "allseitig", "label": "allseitig bds. tastbar", "text": "allseitig beidseits tastbar", "exclusive": true },
+            { "id": "carotis", "label": "A. carotis abgeschwächt/fehlend", "text": "A. carotis abgeschwächt/nicht tastbar" },
+            { "id": "radialis", "label": "A. radialis abgeschwächt/fehlend", "text": "A. radialis abgeschwächt/nicht tastbar" },
+            { "id": "femoralis", "label": "A. femoralis abgeschwächt/fehlend", "text": "A. femoralis abgeschwächt/nicht tastbar" },
+            { "id": "poplitea", "label": "A. poplitea abgeschwächt/fehlend", "text": "A. poplitea abgeschwächt/nicht tastbar" },
+            { "id": "tibialis", "label": "A. tibialis posterior abgeschwächt/fehlend", "text": "A. tibialis posterior abgeschwächt/nicht tastbar" },
+            { "id": "dorsalis", "label": "A. dorsalis pedis abgeschwächt/fehlend", "text": "A. dorsalis pedis abgeschwächt/nicht tastbar" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rektal",
+      "title": "Rektale Untersuchung",
+      "prefix": "Rektal: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "durchgefuehrt",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "unauffällig, kein Blut am Handschuh" },
+            { "id": "auffaellig", "label": "auffällig", "text": "" },
+            { "id": "nicht_untersucht", "label": "nicht untersucht", "text": "nicht durchgeführt" }
+          ]
+        },
+        {
+          "id": "detail",
+          "label": "Befund",
+          "type": "multiple",
+          "showWhen": { "groupId": "durchgefuehrt", "optionId": "auffaellig" },
+          "options": [
+            { "id": "haemorrhoiden", "label": "Hämorrhoiden", "text": "Hämorrhoiden" },
+            { "id": "blut", "label": "Blut am Handschuh", "text": "Blut am Handschuh" },
+            { "id": "tu", "label": "TU palpabel", "text": "Raumforderung im Rektum palpabel" },
+            { "id": "prostata_unauff", "label": "Prostata unauffällig", "text": "Prostata glatt, walnussgroß" },
+            { "id": "prostata_auff", "label": "Prostata auffällig", "text": "Prostata palpatorisch auffällig" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "neuro",
+      "title": "Neurostatus",
+      "prefix": "Neurostatus: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "meningismus",
+          "label": "Meningismus",
+          "type": "single",
+          "options": [
+            { "id": "neg", "label": "negativ", "text": "Meningismus negativ" },
+            { "id": "pos", "label": "positiv", "text": "Meningismus positiv" },
+            { "id": "nicht_pruefbar", "label": "nicht prüfbar", "text": "Meningismus nicht prüfbar" }
+          ]
+        },
+        {
+          "id": "kraft",
+          "label": "Kraft",
+          "type": "single",
+          "options": [
+            { "id": "seitengleich", "label": "seitengleich unauffällig", "text": "Kraft seitengleich unauffällig" },
+            { "id": "monoparese", "label": "Monoparese", "text": "Monoparese" },
+            { "id": "hemiparese", "label": "Hemiparese", "text": "Hemiparese" },
+            { "id": "tetraparese", "label": "Tetraparese", "text": "Tetraparese" },
+            { "id": "plegie", "label": "Plegie", "text": "Plegie" }
+          ]
+        },
+        {
+          "id": "koordination",
+          "label": "Koordination",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "FNV/KHV unauffällig", "text": "Koordination (FNV/KHV) unauffällig" },
+            { "id": "ataxie", "label": "Ataxie", "text": "Ataxie im FNV/KHV" },
+            { "id": "nicht_pruefbar", "label": "nicht prüfbar", "text": "Koordination nicht prüfbar" }
+          ]
+        },
+        {
+          "id": "sensibilitaet",
+          "label": "Sensibilität",
+          "type": "single",
+          "options": [
+            { "id": "seitengleich", "label": "seitengleich unauffällig", "text": "taktile Sensibilität seitengleich unauffällig" },
+            { "id": "seitig", "label": "seitendifferent", "text": "Sensibilität seitendifferent" },
+            { "id": "hypaesthesie", "label": "Hypästhesie", "text": "Hypästhesie" }
+          ]
+        },
+        {
+          "id": "babinski",
+          "label": "Pyramidenbahnzeichen",
+          "type": "single",
+          "options": [
+            { "id": "neg", "label": "Babinski negativ", "text": "Babinski bds. negativ" },
+            { "id": "pos_re", "label": "Babinski re positiv", "text": "Babinski rechts positiv" },
+            { "id": "pos_li", "label": "Babinski li positiv", "text": "Babinski links positiv" },
+            { "id": "pos_bds", "label": "Babinski bds. positiv", "text": "Babinski bds. positiv" }
+          ]
+        },
+        {
+          "id": "stand",
+          "label": "Standversuche",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "Romberg/Unterberger unauffällig", "text": "Romberg und Unterberger unauffällig" },
+            { "id": "abweichung", "label": "Abweichung", "text": "" },
+            { "id": "nicht_pruefbar", "label": "nicht prüfbar", "text": "Standversuche nicht prüfbar" }
+          ]
+        },
+        {
+          "id": "stand_richtung",
+          "label": "Abweichung nach",
+          "type": "single",
+          "showWhen": { "groupId": "stand", "optionId": "abweichung" },
+          "options": [
+            { "id": "re", "label": "rechts", "text": "Romberg/Unterberger Abweichung nach rechts" },
+            { "id": "li", "label": "links", "text": "Romberg/Unterberger Abweichung nach links" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bewegungsapparat",
+      "title": "Bewegungsapparat",
+      "prefix": "Bewegungsapparat: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "gelenke",
+          "label": "Gelenke",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Gelenke frei beweglich, nicht geschwollen" },
+            { "id": "schwellung", "label": "Schwellung/Druckdolenz", "text": "Gelenkschwellung oder Druckdolenz" }
+          ]
+        },
+        {
+          "id": "muskulatur",
+          "label": "Muskulatur",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Muskulatur unauffällig" },
+            { "id": "atrophie", "label": "Atrophie", "text": "Muskelatrophie" },
+            { "id": "hartspann", "label": "Hartspann", "text": "muskulärer Hartspann" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blutungsraeume",
+      "title": "Blutungsräume",
+      "prefix": "Blutungsräume: ",
+      "groupJoiner": "; ",
+      "groups": [
+        {
+          "id": "brust",
+          "label": "Brust",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Thorax ohne Hinweis auf relevanten Blutverlust" },
+            { "id": "auffaellig", "label": "auffällig", "text": "" },
+            { "id": "nicht_relevant", "label": "nicht trauma-relevant", "text": "" }
+          ]
+        },
+        {
+          "id": "brust_detail",
+          "label": "Brust — Befund",
+          "type": "multiple",
+          "showWhen": { "groupId": "brust", "optionId": "auffaellig" },
+          "options": [
+            { "id": "haemo_re", "label": "V. a. Hämothorax re", "text": "V. a. Hämothorax rechts" },
+            { "id": "haemo_li", "label": "V. a. Hämothorax li", "text": "V. a. Hämothorax links" },
+            { "id": "instabil", "label": "instabiler Thorax", "text": "instabiler Thorax" },
+            { "id": "aeusserlich", "label": "äußere Blutung", "text": "äußere Thoraxblutung" }
+          ]
+        },
+        {
+          "id": "bauch",
+          "label": "Bauch",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Abdomen ohne Hinweis auf intraabdominelle Blutung" },
+            { "id": "auffaellig", "label": "auffällig", "text": "" },
+            { "id": "nicht_relevant", "label": "nicht trauma-relevant", "text": "" }
+          ]
+        },
+        {
+          "id": "bauch_detail",
+          "label": "Bauch — Befund",
+          "type": "multiple",
+          "showWhen": { "groupId": "bauch", "optionId": "auffaellig" },
+          "options": [
+            { "id": "intraabdominell", "label": "V. a. intraabdominelle Blutung", "text": "V. a. intraabdominelle Blutung" },
+            { "id": "gespannt", "label": "gespanntes Abdomen", "text": "Abdomen gespannt" }
+          ]
+        },
+        {
+          "id": "becken",
+          "label": "Becken",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Becken stabil" },
+            { "id": "auffaellig", "label": "auffällig", "text": "" },
+            { "id": "nicht_relevant", "label": "nicht trauma-relevant", "text": "" }
+          ]
+        },
+        {
+          "id": "becken_detail",
+          "label": "Becken — Befund",
+          "type": "multiple",
+          "showWhen": { "groupId": "becken", "optionId": "auffaellig" },
+          "options": [
+            { "id": "instabil", "label": "Becken instabil", "text": "Becken instabil" },
+            { "id": "va_blutung", "label": "V. a. Beckenblutung", "text": "V. a. relevante Beckenblutung" }
+          ]
+        },
+        {
+          "id": "beine",
+          "label": "Beine",
+          "type": "single",
+          "options": [
+            { "id": "unauffaellig", "label": "unauffällig", "text": "Beine ohne Hinweis auf relevanten Blutverlust" },
+            { "id": "auffaellig", "label": "auffällig", "text": "" },
+            { "id": "nicht_relevant", "label": "nicht trauma-relevant", "text": "" }
+          ]
+        },
+        {
+          "id": "beine_detail",
+          "label": "Beine — Befund",
+          "type": "multiple",
+          "showWhen": { "groupId": "beine", "optionId": "auffaellig" },
+          "options": [
+            { "id": "os_re", "label": "V. a. OS-Blutung re", "text": "V. a. Oberschenkelblutung rechts" },
+            { "id": "os_li", "label": "V. a. OS-Blutung li", "text": "V. a. Oberschenkelblutung links" },
+            { "id": "os_bds", "label": "V. a. OS-Blutung bds.", "text": "V. a. Oberschenkelblutung beidseits" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "verletzungen",
+      "title": "Verletzungen",
+      "prefix": "Verletzungen: ",
+      "groups": [
+        {
+          "id": "uebersicht",
+          "type": "multiple",
+          "options": [
+            { "id": "keine", "label": "keine äußerlichen Verletzungen", "text": "keine äußerlichen Verletzungen", "exclusive": true },
+            { "id": "sht", "label": "SHT", "text": "V. a. SHT" },
+            { "id": "hws", "label": "HWS", "text": "V. a. HWS-Verletzung" },
+            { "id": "thorax", "label": "Thorax", "text": "Thoraxtrauma" },
+            { "id": "abdomen", "label": "Abdomen", "text": "Abdominaltrauma" },
+            { "id": "becken", "label": "Becken", "text": "Beckentrauma" },
+            { "id": "extremitaet_oben", "label": "obere Extremität", "text": "Verletzung der oberen Extremität" },
+            { "id": "extremitaet_unten", "label": "untere Extremität", "text": "Verletzung der unteren Extremität" },
+            { "id": "weichteil", "label": "Weichteil", "text": "Weichteilverletzung" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blutverduennung",
+      "title": "Blutverdünnung",
+      "prefix": "Antikoagulation/Thrombozytenhemmung: ",
+      "groupJoiner": ", ",
+      "groups": [
+        {
+          "id": "status",
+          "type": "single",
+          "options": [
+            { "id": "nein", "label": "nein", "text": "keine" },
+            { "id": "ja", "label": "ja", "text": "ja (einfach)" },
+            { "id": "dual", "label": "dual", "text": "dual" }
+          ]
+        },
+        {
+          "id": "mittel_einfach",
+          "label": "Welches Medikament?",
+          "type": "multiple",
+          "showWhen": { "groupId": "status", "optionId": "ja" },
+          "options": [
+            { "id": "ass", "label": "ASS", "text": "ASS" },
+            { "id": "clopidogrel", "label": "Clopidogrel", "text": "Clopidogrel" },
+            { "id": "doak", "label": "DOAK", "text": "DOAK" },
+            { "id": "marcumar", "label": "Marcumar/VKA", "text": "Vitamin-K-Antagonist" },
+            { "id": "heparin", "label": "Heparin", "text": "Heparin" },
+            { "id": "unbekannt", "label": "unbekannt", "text": "Substanz unbekannt" }
+          ]
+        },
+        {
+          "id": "mittel_dual",
+          "label": "Welche Kombination?",
+          "type": "multiple",
+          "showWhen": { "groupId": "status", "optionId": "dual" },
+          "options": [
+            { "id": "ass_clopi", "label": "ASS + Clopidogrel", "text": "ASS und Clopidogrel" },
+            { "id": "ass_doak", "label": "ASS + DOAK", "text": "ASS und DOAK" },
+            { "id": "unbekannt", "label": "unbekannt", "text": "Kombination unbekannt" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ccr",
+      "title": "Canadian C-Spine Rule",
+      "prefix": "Canadian C-Spine Rule: ",
+      "groupJoiner": "; ",
+      "groups": [
+        {
+          "id": "indikation",
+          "label": "CCR prüfen?",
+          "type": "single",
+          "options": [
+            { "id": "nein", "label": "nicht indiziert", "text": "nicht indiziert" },
+            { "id": "ja", "label": "prüfen", "text": "" }
+          ]
+        },
+        {
+          "id": "hochrisiko",
+          "label": "Hochrisikokriterium?",
+          "type": "single",
+          "showWhen": { "groupId": "indikation", "optionId": "ja" },
+          "options": [
+            { "id": "nein", "label": "nein", "text": "kein Hochrisikokriterium" },
+            { "id": "ja", "label": "ja", "text": "" }
+          ]
+        },
+        {
+          "id": "hochrisiko_welche",
+          "label": "Welche Hochrisikokriterien?",
+          "type": "multiple",
+          "showWhen": { "groupId": "hochrisiko", "optionId": "ja" },
+          "options": [
+            { "id": "alter", "label": "Alter ≥ 65", "text": "Hochrisiko Alter ≥ 65 J., HWS-Immobilisation/Bildgebung indiziert" },
+            { "id": "mechanismus", "label": "gefährlicher Mechanismus", "text": "Hochrisiko gefährlicher Mechanismus, HWS-Immobilisation/Bildgebung indiziert" },
+            { "id": "paraesthesie", "label": "Parästhesien", "text": "Hochrisiko Parästhesien, HWS-Immobilisation/Bildgebung indiziert" }
+          ]
+        },
+        {
+          "id": "niedrigrisiko",
+          "label": "Mindestens ein Niedrigrisikokriterium?",
+          "type": "single",
+          "showWhen": { "groupId": "hochrisiko", "optionId": "nein" },
+          "options": [
+            { "id": "ja", "label": "ja", "text": "Niedrigrisikokriterium vorhanden" },
+            { "id": "nein", "label": "nein", "text": "kein Niedrigrisikokriterium, HWS-Immobilisation/Bildgebung indiziert" }
+          ]
+        },
+        {
+          "id": "rotation",
+          "label": "Aktive Rotation 45° beidseits möglich?",
+          "type": "single",
+          "showWhen": { "groupId": "niedrigrisiko", "optionId": "ja" },
+          "options": [
+            { "id": "ja", "label": "ja", "text": "aktive HWS-Rotation 45° bds. möglich, CCR erfüllt" },
+            { "id": "nein", "label": "nein", "text": "Rotation 45° nicht möglich, Bildgebung indiziert" }
+          ]
+        }
+      ]
+    }
+  ]
+}

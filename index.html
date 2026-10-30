@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Status praesens</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="locked">
+    <div class="auth-gate" id="auth-gate">
+      <form class="auth-card glass" id="auth-form">
+        <p class="eyebrow">RD Dokumentation</p>
+        <h1>Anmeldung</h1>
+        <p class="lede">Bitte Passwort eingeben, um fortzufahren.</p>
+        <label class="auth-label" for="auth-password">Passwort</label>
+        <input class="auth-input" id="auth-password" name="password" type="password" autocomplete="current-password" required />
+        <p class="auth-error" id="auth-error" hidden>Passwort ungültig.</p>
+        <button class="btn primary" type="submit">Anmelden</button>
+      </form>
+    </div>
+    <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="Navigation öffnen" aria-controls="sidebar" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+    <aside class="sidebar" id="sidebar" aria-label="Hauptnavigation" aria-hidden="true">
+      <p class="sidebar-brand">RD Dokumentation</p>
+      <nav id="page-navigation" class="page-navigation" aria-label="Seiten"></nav>
+    </aside>
+    <div class="app">
+      <header class="hero glass">
+        <p class="eyebrow" id="subtitle">Checkliste Dokumentation</p>
+        <h1 id="title">RD Basic</h1>
+        <p class="lede">
+          Befunde antippen — der Absatz wird unten automatisch zusammengesetzt.
+        </p>
+      </header>
+      <main id="categories" class="categories"></main>
+    </div>
+    <aside class="dock">
+      <section class="output glass">
+        <div class="output-head">
+          <div>
+            <h2>Dokumentationstext</h2>
+            <p id="progress" class="progress">0 / 0 Kategorien</p>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn ghost" id="reset">Zurücksetzen</button>
+            <button type="button" class="btn primary" id="copy">Kopieren</button>
+          </div>
+        </div>
+        <p id="output" class="output-text">Bitte Befunde auswählen …</p>
+      </section>
+    </aside>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
