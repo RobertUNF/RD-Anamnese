@@ -29,17 +29,19 @@
     {
       "id": "personen_vor_ort",
       "title": "Vor Ort angetroffene Personen",
+      "prefix": "Vor Ort angetroffen: ",
+      "groupJoiner": ", ",
       "type": "multiple",
       "options": [
-        { "id": "patient", "label": "Patient", "text": "Patient vor Ort angetroffen" },
-        { "id": "angehoerige", "label": "Angehörige", "text": "Angehörige vor Ort angetroffen" },
-        { "id": "pflegepersonal", "label": "Pflegepersonal", "text": "Pflegepersonal vor Ort angetroffen" },
-        { "id": "first_responder", "label": "First Responder", "text": "First Responder vor Ort angetroffen" },
-        { "id": "polizei", "label": "Polizei", "text": "Polizei vor Ort angetroffen" },
-        { "id": "feuerwehr", "label": "Feuerwehr", "text": "Feuerwehr vor Ort angetroffen" },
-        { "id": "arzt", "label": "Weiterer Arzt", "text": "Weiterer Arzt vor Ort angetroffen" },
-        { "id": "weiterer_rettungsdienst", "label": "Weiterer Rettungsdienst", "text": "Weiteres Rettungsdienstpersonal vor Ort angetroffen" },
-        { "id": "sonstige_personen", "label": "Sonstige Personen", "text": "Weitere Personen vor Ort angetroffen" }
+        { "id": "patient", "label": "Patient", "text": "Patient" },
+        { "id": "angehoerige", "label": "Angehörige", "text": "Angehörige" },
+        { "id": "pflegepersonal", "label": "Pflegepersonal", "text": "Pflegepersonal" },
+        { "id": "first_responder", "label": "First Responder", "text": "First Responder" },
+        { "id": "polizei", "label": "Polizei", "text": "Polizei" },
+        { "id": "feuerwehr", "label": "Feuerwehr", "text": "Feuerwehr" },
+        { "id": "arzt", "label": "Weiterer Arzt", "text": "weiterer Arzt" },
+        { "id": "weiterer_rettungsdienst", "label": "Weiterer RTW", "text": "weiterer RTW" },
+        { "id": "sonstige_personen", "label": "Sonstige Personen", "text": "sonstige Personen" }
       ]
     },
     {
@@ -55,6 +57,7 @@
             { "id": "notfallrucksack", "label": "Notfallrucksack", "text": "Notfallrucksack" },
             { "id": "ipad", "label": "iPad", "text": "iPad" },
             { "id": "funkgeraet", "label": "Funkgerät", "text": "Funkgerät" },
+            { "id": "corpuls", "label": "Corpuls", "text": "Corpuls" },
             { "id": "sauerstoff", "label": "Sauerstoff", "text": "Sauerstoff" },
             { "id": "kindertasche", "label": "Kindertasche", "text": "Kindertasche" },
             { "id": "geburtenset", "label": "Geburtenset", "text": "Geburtenset" },
@@ -70,15 +73,8 @@
       "type": "multiple",
       "options": [
         { "id": "erstgespraech", "label": "Erstgespräch", "text": "Erstgespräch mit dem Patienten geführt" },
-        { "id": "abcde", "label": "Beurteilung nach ABCDE", "text": "Erstbeurteilung nach ABCDE durchgeführt" }
-      ]
-    },
-    {
-      "id": "retts",
-      "title": "Beurteilung nach RETTS",
-      "type": "single",
-      "options": [
-        { "id": "retts_beurteilt", "label": "Patient nach RETTS beurteilt", "text": "Patient nach RETTS beurteilt" }
+        { "id": "abcde", "label": "Beurteilung nach ABCDE", "text": "Erstbeurteilung nach ABCDE durchgeführt" },
+        { "id": "paediatrisches_dreieck", "label": "Pädiatrisches Beurteilungsdreieck", "text": "Pädiatrisches Beurteilungsdreieck durchgeführt" }
       ]
     },
     {
@@ -102,6 +98,54 @@
         { "id": "kapnographie", "label": "Kapnographie", "text": "Kapnographie durchgeführt" },
         { "id": "blutzucker", "label": "Blutzuckermessung", "text": "Blutzucker gemessen" },
         { "id": "temperatur", "label": "Temperaturmessung", "text": "Temperatur gemessen" }
+      ]
+    },
+    {
+      "id": "therapiemassnahmen",
+      "title": "Weitere Therapiemaßnahmen",
+      "groupJoiner": "; ",
+      "groups": [
+        {
+          "id": "massnahmen",
+          "label": "Maßnahmen",
+          "type": "multiple",
+          "options": [
+            { "id": "keine_weiteren_massnahmen", "label": "Keine weiteren Therapiemaßnahmen erforderlich", "text": "Keine weiteren Therapiemaßnahmen erforderlich", "exclusive": true },
+            { "id": "wundversorgung", "label": "Wundversorgung durchgeführt", "text": "Wundversorgung durchgeführt" },
+            { "id": "ganzkoerperimmobilisation", "label": "Ganzkörperimmobilisation mit Vakuummatratze", "text": "Ganzkörperimmobilisation mit Vakuummatratze durchgeführt" },
+            { "id": "extremitaetenschienung", "label": "Extremitätenschienung", "text": "Extremitätenschienung durchgeführt" },
+            { "id": "sop", "label": "Behandlung nach SOP durchgeführt", "text": "" }
+          ]
+        },
+        {
+          "id": "sop_auswahl",
+          "label": "SOP auswählen",
+          "type": "multiple",
+          "prefix": "Behandlung nach passender SOP durchgeführt (",
+          "suffix": ")",
+          "joiner": ", ",
+          "showWhen": { "groupId": "massnahmen", "optionId": "sop" },
+          "options": [
+            { "id": "anaphylaxie", "label": "Anaphylaxie", "text": "Anaphylaxie" },
+            { "id": "atemwegsobstruktion", "label": "Atemwegsobstruktion", "text": "Atemwegsobstruktion" },
+            { "id": "acs", "label": "Akutes Koronarsyndrom (ACS)", "text": "Akutes Koronarsyndrom (ACS)" },
+            { "id": "tachykardie", "label": "Tachykardie", "text": "Tachykardie" },
+            { "id": "bradykardie", "label": "Bradykardie", "text": "Bradykardie" },
+            { "id": "volumenmangel", "label": "Volumenmangel", "text": "Volumenmangel" },
+            { "id": "unstillbare_blutung", "label": "Unstillbare Blutung", "text": "unstillbare Blutung" },
+            { "id": "hypotonie", "label": "Hypotonie bei Erkrankungen", "text": "Hypotonie bei Erkrankungen" },
+            { "id": "hypertonie", "label": "Hypertonie bei Erkrankungen", "text": "Hypertonie bei Erkrankungen" },
+            { "id": "schlaganfall", "label": "Schlaganfall", "text": "Schlaganfall" },
+            { "id": "krampfanfall", "label": "Krampfanfall", "text": "Krampfanfall" },
+            { "id": "hypoglykaemie", "label": "Hypoglykämie", "text": "Hypoglykämie" },
+            { "id": "hyperglykaemie", "label": "Hyperglykämie", "text": "Hyperglykämie" },
+            { "id": "intoxikation", "label": "Intoxikation", "text": "Intoxikation" },
+            { "id": "fieber", "label": "Fieber", "text": "Fieber" },
+            { "id": "leichte_schmerzen_mildes_fieber", "label": "Leichte Schmerzen und mildes Fieber", "text": "Leichte Schmerzen und mildes Fieber" },
+            { "id": "mittlere_starke_schmerzen", "label": "Mittlere und starke Schmerzen", "text": "Mittlere und starke Schmerzen" },
+            { "id": "schmerzen_schweres_trauma", "label": "Schmerzen beim schweren Trauma", "text": "Schmerzen beim schweren Trauma" }
+          ]
+        }
       ]
     },
     {
@@ -145,7 +189,7 @@
           "label": "Transportentscheidung",
           "type": "single",
           "options": [
-            { "id": "transport", "label": "Transport", "text": "Transport durchgeführt" },
+            { "id": "transport", "label": "Transport", "text": "Transport ins Krankenhaus durchgeführt" },
             { "id": "kein_transport", "label": "Kein Transport", "text": "Kein Transport durchgeführt" }
           ]
         },
@@ -162,33 +206,86 @@
         },
         {
           "id": "fahrt",
-          "label": "Fahrt",
+          "label": "Transportverlauf",
+          "type": "multiple",
+          "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
+          "options": [
+            { "id": "fahrt_ohne_komplikationen", "label": "Ohne Komplikationen", "text": "Transport ohne Komplikationen" },
+            { "id": "fahrt_monitoring", "label": "Unter Monitoring", "text": "Transport unter Monitoring" },
+            { "id": "fahrt_schwebetisch", "label": "Mit Schwebetisch", "text": "Transport unter Verwendung des Schwebetisches" }
+          ]
+        },
+        {
+          "id": "transport_handlungen",
+          "label": "Handlungen während des Transports",
+          "type": "multiple",
+          "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
+          "options": [
+            { "id": "sampler_transport", "label": "SAMPLER-Anamnese", "text": "SAMPLER-Anamnese während des Transports erhoben" },
+            { "id": "dokumentation_transport", "label": "Dokumentation", "text": "Dokumentation während des Transports durchgeführt" }
+          ]
+        },
+        {
+          "id": "angehoerige_begleiten",
+          "label": "Begleiten Angehörige den Transport?",
           "type": "single",
           "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
           "options": [
-            { "id": "fahrt_krankenhaus", "label": "Fahrt ins Krankenhaus", "text": "Fahrt ins Krankenhaus durchgeführt" },
-            { "id": "fahrt_ohne_komplikationen", "label": "Fahrt ohne Komplikationen", "text": "Fahrt ins Krankenhaus ohne Komplikationen verlaufen" }
+            { "id": "begleitung_ja", "label": "Ja", "text": "Angehörige begleiteten den Transport" },
+            { "id": "begleitung_nein", "label": "Nein", "text": "Keine Begleitung durch Angehörige" }
+          ]
+        },
+        {
+          "id": "transport_sosi",
+          "label": "Sondersignal am Transport?",
+          "type": "single",
+          "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
+          "options": [
+            { "id": "sondersignal", "label": "Transport mit Sondersignal", "text": "Transport mit Sondersignal" },
+            { "id": "ohne_sondersignal", "label": "Transport ohne Sondersignal", "text": "Transport ohne Sondersignal" }
+          ]
+        },
+        {
+          "id": "zustand_transport",
+          "label": "Patientenzustand während des Transports",
+          "type": "single",
+          "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
+          "options": [
+            { "id": "zustand_unveraendert", "label": "Unverändert", "text": "Patientenzustand während des Transports unverändert" },
+            { "id": "zustand_veraendert", "label": "Verändert", "text": "Patientenzustand während des Transports verändert" }
           ]
         },
         {
           "id": "umlagerung",
-          "label": "Umlagerung auf Bett",
-          "type": "single",
+          "label": "Umlagerung",
+          "type": "multiple",
           "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
           "options": [
-            { "id": "umlagerung_erfolgt", "label": "Umlagerung erfolgt", "text": "Umlagerung auf das Krankenhausbett erfolgt" },
-            { "id": "umlagerung_mitgeholfen", "label": "Bei Umlagerung geholfen", "text": "Bei der Umlagerung auf das Krankenhausbett mitgeholfen" }
+            { "id": "wartebereich", "label": "Patient setzt sich in den Warteraum", "text": "Patient setzt sich in den Warteraum" },
+            { "id": "rollstuhl", "label": "Patient erhält Rollstuhl", "text": "Patient in den Rollstuhl gesetzt" },
+            { "id": "krankenhausbett", "label": "Patient erhält Krankenhausbett", "text": "Patient auf das Krankenhausbett umgelagert" },
+            { "id": "umlagerung_hilfe", "label": "Patient benötigt beim Umlagern Hilfe", "text": "Patient benötigt beim Umlagern Hilfe" }
           ]
         },
         {
           "id": "uebergabe_empfaenger",
           "label": "Übergabe an",
-          "type": "multiple",
+          "type": "single",
           "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
           "options": [
-            { "id": "uebergabe_arzt", "label": "Arzt", "text": "Arzt" },
-            { "id": "uebergabe_dgkp", "label": "DGKP", "text": "DGKP" },
-            { "id": "uebergabe_pflegepersonal", "label": "Weiteres Pflegepersonal", "text": "weiteres Pflegepersonal" }
+            { "id": "uebergabe_arzt", "label": "Arzt", "text": "Übergabe an den Arzt erfolgt" },
+            { "id": "uebergabe_dgkp", "label": "DGKP", "text": "Übergabe an die DGKP erfolgt" },
+            { "id": "uebergabe_pflegepersonal", "label": "Weiteres Pflegepersonal", "text": "Übergabe an das weitere Pflegepersonal erfolgt" }
+          ]
+        },
+        {
+          "id": "uebergabe_wartezeit",
+          "label": "Lange Wartezeit bei der Übergabe?",
+          "type": "single",
+          "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
+          "options": [
+            { "id": "wartezeit_lang", "label": "Ja", "text": "Lange Wartezeit bei der Übergabe" },
+            { "id": "wartezeit_nicht_lang", "label": "Nein", "text": "Keine lange Wartezeit bei der Übergabe" }
           ]
         },
         {
@@ -199,6 +296,25 @@
           "options": [
             { "id": "transport_angeraten", "label": "Transport angeraten, abgelehnt", "text": "RD-Team rät zum Transport; Patient entscheidet sich nach Aufklärung dagegen" },
             { "id": "belassung_empfohlen", "label": "Belassung empfohlen", "text": "RD-Team empfiehlt die Belassung; Patient verbleibt vor Ort" }
+          ]
+        },
+        {
+          "id": "retts_belassung",
+          "label": "Beurteilung nach RETTS",
+          "type": "single",
+          "showWhen": { "groupId": "entscheidung", "optionId": "kein_transport" },
+          "options": [
+            { "id": "retts_beurteilt", "label": "Patient nach RETTS beurteilt", "text": "Patient nach RETTS beurteilt" }
+          ]
+        },
+        {
+          "id": "zurechnungsfaehigkeit",
+          "label": "Ist der Patient zurechnungsfähig?",
+          "type": "single",
+          "showWhen": { "groupId": "entscheidung", "optionId": "kein_transport" },
+          "options": [
+            { "id": "zurechnungsfaehig", "label": "Ja", "text": "Patient als zurechnungsfähig eingeschätzt" },
+            { "id": "nicht_zurechnungsfaehig", "label": "Nein", "text": "Patient als nicht zurechnungsfähig eingeschätzt" }
           ]
         },
         {

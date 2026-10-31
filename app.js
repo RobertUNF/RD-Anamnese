@@ -97,7 +97,8 @@ function textForGroup(category, group) {
   const texts = ids
     .map((id) => group.options.find((option) => option.id === id)?.text)
     .filter(Boolean);
-  return texts.join(group.joiner ?? ", ");
+  if (!texts.length) return "";
+  return `${group.prefix ?? ""}${texts.join(group.joiner ?? ", ")}${group.suffix ?? ""}`;
 }
 
 function textForCategory(category) {
