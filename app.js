@@ -258,7 +258,7 @@ function showHome() {
 }
 
 async function selectPage(page) {
-  const response = await fetch(page.file);
+  const response = await fetch(page.file, { cache: "no-store" });
   if (!response.ok) throw new Error(`Seite konnte nicht geladen werden: ${page.file}`);
   catalog = await response.json();
   activePage = page;
