@@ -1,8 +1,8 @@
 {
   "pages": [
-    { "id": "rd-intern", "label": "RD-intern", "file": "kategorien.json" },
-    { "id": "rd-trauma", "label": "RD-trauma", "file": "rd-advanced.json" },
-    { "id": "klinischer-status", "label": "Klinischer Status", "file": "klinischer-status.json" },
-    { "id": "rd-verlauf", "label": "RD-Verlauf", "file": "rd-verlauf.json" }
+    { "id": "rd-intern", "label": "RD-Intern", "group": "rettungsdienst", "file": "kategorien.json" },
+    { "id": "rd-trauma", "label": "RD-Trauma", "group": "rettungsdienst", "file": "rd-advanced.json" },
+    { "id": "klinischer-status", "label": "MED-Status praesens", "group": "klinik", "file": "klinischer-status.json" },
+    { "id": "rd-verlauf", "label": "RD-Verlauf", "group": "rettungsdienst", "file": "rd-verlauf.json" }
   ]
 }

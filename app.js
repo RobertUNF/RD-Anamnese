@@ -1,11 +1,15 @@
 const STORAGE_PREFIX = "rd-doc-state:";
 const AUTH_STORAGE = "rd-doc-auth";
+const PAGE_GROUPS = [
+  { id: "rettungsdienst", label: "Rettungsdienst" },
+  { id: "klinik", label: "Klinik" }
+];
 
 const els = {
   title: document.getElementById("title"),
   subtitle: document.getElementById("subtitle"),
   home: document.getElementById("home-screen"),
-  appGrid: document.getElementById("app-grid"),
+  homeGroups: document.getElementById("home-groups"),
   pageScreen: document.getElementById("page-screen"),
   categories: document.getElementById("categories"),
   output: document.getElementById("output"),
@@ -101,7 +105,12 @@ function textForGroup(category, group) {
     .map((id) => group.options.find((option) => option.id === id)?.text)
     .filter(Boolean);
   if (!texts.length) return "";
-  return `${group.prefix ?? ""}${texts.join(group.joiner ?? ", ")}${group.suffix ?? ""}`;
+  const joiner = group.joiner ?? ", ";
+  const conjunction = group.conjunction ?? " und ";
+  const joined = texts.length > 1
+    ? `${texts.slice(0, -1).join(joiner)}${conjunction}${texts[texts.length - 1]}`
+    : texts[0];
+  return `${group.prefix ?? ""}${joined}${group.suffix ?? ""}`;
 }
 
 function textForCategory(category) {
@@ -202,16 +211,31 @@ function renderNavigation() {
   homeButton.setAttribute("aria-current", activePage === null ? "page" : "false");
   homeButton.addEventListener("click", showHome);
 
-  const links = navigation.pages.map((page) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "page-link";
-    button.textContent = page.label;
-    button.setAttribute("aria-current", page.id === activePage?.id ? "page" : "false");
-    button.addEventListener("click", () => selectPage(page));
-    return button;
-  });
-  els.navigation.replaceChildren(homeButton, ...links);
+  const sections = PAGE_GROUPS.map((group) => {
+    const pages = navigation.pages.filter((page) => page.group === group.id);
+    if (!pages.length) return null;
+
+    const section = document.createElement("section");
+    section.className = "page-navigation-group";
+
+    const heading = document.createElement("h2");
+    heading.className = "page-navigation-title";
+    heading.textContent = group.label;
+
+    const links = pages.map((page) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "page-link";
+      button.textContent = page.label;
+      button.setAttribute("aria-current", page.id === activePage?.id ? "page" : "false");
+      button.addEventListener("click", () => selectPage(page));
+      return button;
+    });
+
+    section.append(heading, ...links);
+    return section;
+  }).filter(Boolean);
+  els.navigation.replaceChildren(homeButton, ...sections);
 }
 
 function renderHome() {
@@ -222,29 +246,47 @@ function renderHome() {
     "rd-verlauf": "fa-route",
     default: "fa-kit-medical"
   };
-  const tiles = navigation.pages.map((page) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "app-tile";
-    button.dataset.page = page.id;
-    button.setAttribute("aria-label", `App ${page.label} öffnen`);
+  const sections = PAGE_GROUPS.map((group) => {
+    const pages = navigation.pages.filter((page) => page.group === group.id);
+    if (!pages.length) return null;
 
-    const icon = document.createElement("span");
-    icon.className = "app-icon";
-    icon.setAttribute("aria-hidden", "true");
-    const symbol = document.createElement("i");
-    symbol.className = `fa-solid ${icons[page.id] ?? icons.default}`;
-    icon.append(symbol);
+    const section = document.createElement("section");
+    section.className = "home-group";
+    section.setAttribute("aria-label", group.label);
 
-    const label = document.createElement("span");
-    label.className = "app-label";
-    label.textContent = page.label;
+    const heading = document.createElement("h2");
+    heading.className = "home-group-title";
+    heading.textContent = group.label;
 
-    button.append(icon, label);
-    button.addEventListener("click", () => selectPage(page));
-    return button;
-  });
-  els.appGrid.replaceChildren(...tiles);
+    const grid = document.createElement("div");
+    grid.className = "app-grid";
+    for (const page of pages) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "app-tile";
+      button.dataset.page = page.id;
+      button.setAttribute("aria-label", `App ${page.label} öffnen`);
+
+      const icon = document.createElement("span");
+      icon.className = "app-icon";
+      icon.setAttribute("aria-hidden", "true");
+      const symbol = document.createElement("i");
+      symbol.className = `fa-solid ${icons[page.id] ?? icons.default}`;
+      icon.append(symbol);
+
+      const label = document.createElement("span");
+      label.className = "app-label";
+      label.textContent = page.label;
+
+      button.append(icon, label);
+      button.addEventListener("click", () => selectPage(page));
+      grid.append(button);
+    }
+
+    section.append(heading, grid);
+    return section;
+  }).filter(Boolean);
+  els.homeGroups.replaceChildren(...sections);
 }
 
 function showHome() {

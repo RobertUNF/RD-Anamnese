@@ -1,5 +1,5 @@
 {
-  "schemaHinweis": "Jede Kategorie hat type 'single' oder 'multiple', oder mehrere groups mit eigenem type. Optionen: id, label (Button), text (Baustein). showWhen blendet eine Gruppe abhängig von einer anderen Gruppe derselben Kategorie ein.",
+  "schemaHinweis": "Jede Kategorie hat type 'single' oder 'multiple', oder mehrere groups mit eigenem type. Optionen: id, label, text. prefix/suffix rahmen den Text ein; joiner trennt Mehrfachauswahlen, conjunction verbindet deren letzten Eintrag. showWhen blendet eine Gruppe abhängig von einer anderen Gruppe derselben Kategorie ein.",
   "meta": {
     "title": "RD-Verlauf",
     "subtitle": "Chronologischer Einsatzablauf",
@@ -12,57 +12,60 @@
       "id": "anfahrt",
       "title": "Anfahrt",
       "type": "single",
+      "prefix": "Die Anfahrt erfolgte ",
       "options": [
-        { "id": "sondersignal", "label": "Mit Sondersignal", "text": "Anfahrt mit Sondersignal" },
-        { "id": "ohne_sondersignal", "label": "Ohne Sondersignal", "text": "Anfahrt ohne Sondersignal" }
+        { "id": "sondersignal", "label": "Mit Sondersignal", "text": "mit Sondersignal" },
+        { "id": "ohne_sondersignal", "label": "Ohne Sondersignal", "text": "ohne Sondersignal" }
       ]
     },
     {
       "id": "einweiser",
       "title": "Einweiser",
       "type": "single",
+      "prefix": "Am Einsatzort war ",
       "options": [
-        { "id": "einweiser_vor_ort", "label": "Einweiser vor Ort", "text": "Einweiser vor Ort" },
-        { "id": "kein_einweiser", "label": "Kein Einweiser vor Ort", "text": "Kein Einweiser vor Ort" }
+        { "id": "einweiser_vor_ort", "label": "Einweiser vor Ort", "text": "ein Einweiser anwesend" },
+        { "id": "kein_einweiser", "label": "Kein Einweiser vor Ort", "text": "kein Einweiser anwesend" }
       ]
     },
     {
       "id": "personen_vor_ort",
       "title": "Vor Ort angetroffene Personen",
-      "prefix": "Vor Ort angetroffen: ",
+      "prefix": "Vor Ort trafen wir ",
       "groupJoiner": ", ",
       "type": "multiple",
       "options": [
-        { "id": "patient", "label": "Patient", "text": "Patient" },
+        { "id": "patient", "label": "Patient", "text": "den Patienten" },
         { "id": "angehoerige", "label": "Angehörige", "text": "Angehörige" },
         { "id": "pflegepersonal", "label": "Pflegepersonal", "text": "Pflegepersonal" },
-        { "id": "first_responder", "label": "First Responder", "text": "First Responder" },
-        { "id": "polizei", "label": "Polizei", "text": "Polizei" },
-        { "id": "feuerwehr", "label": "Feuerwehr", "text": "Feuerwehr" },
-        { "id": "arzt", "label": "Weiterer Arzt", "text": "weiterer Arzt" },
-        { "id": "weiterer_rettungsdienst", "label": "Weiterer RTW", "text": "weiterer RTW" },
-        { "id": "sonstige_personen", "label": "Sonstige Personen", "text": "sonstige Personen" }
+        { "id": "first_responder", "label": "First Responder", "text": "einen First Responder" },
+        { "id": "polizei", "label": "Polizei", "text": "die Polizei" },
+        { "id": "feuerwehr", "label": "Feuerwehr", "text": "die Feuerwehr" },
+        { "id": "arzt", "label": "Weiterer Arzt", "text": "einen weiteren Arzt" },
+        { "id": "weiterer_rettungsdienst", "label": "Weiterer RTW", "text": "eine weitere RTW-Besatzung" },
+        { "id": "sonstige_personen", "label": "Sonstige Personen", "text": "weitere Personen" }
       ]
     },
     {
       "id": "ausruestung",
       "title": "Mitgenommene Ausrüstung",
-      "prefix": "Zum Patienten mitgenommen: ",
+      "prefix": "Zum Patienten nahmen wir ",
+      "suffix": " mit",
       "groupJoiner": ", ",
       "groups": [
         {
           "id": "ausruestung_mitgenommen",
           "type": "multiple",
           "options": [
-            { "id": "notfallrucksack", "label": "Notfallrucksack", "text": "Notfallrucksack" },
-            { "id": "ipad", "label": "iPad", "text": "iPad" },
-            { "id": "funkgeraet", "label": "Funkgerät", "text": "Funkgerät" },
-            { "id": "corpuls", "label": "Corpuls", "text": "Corpuls" },
+            { "id": "notfallrucksack", "label": "Notfallrucksack", "text": "den Notfallrucksack" },
+            { "id": "ipad", "label": "iPad", "text": "das iPad" },
+            { "id": "funkgeraet", "label": "Funkgerät", "text": "das Funkgerät" },
+            { "id": "corpuls", "label": "Corpuls", "text": "das Corpuls-Gerät" },
             { "id": "sauerstoff", "label": "Sauerstoff", "text": "Sauerstoff" },
-            { "id": "kindertasche", "label": "Kindertasche", "text": "Kindertasche" },
-            { "id": "geburtenset", "label": "Geburtenset", "text": "Geburtenset" },
-            { "id": "traumarucksack", "label": "Traumarucksack", "text": "Traumarucksack" },
-            { "id": "medikamenten_kuehltasche", "label": "Medikamenten-Kühltasche", "text": "Medikamenten-Kühltasche" }
+            { "id": "kindertasche", "label": "Kindertasche", "text": "die Kindertasche" },
+            { "id": "geburtenset", "label": "Geburtenset", "text": "das Geburten-Set" },
+            { "id": "traumarucksack", "label": "Traumarucksack", "text": "den Traumarucksack" },
+            { "id": "medikamenten_kuehltasche", "label": "Medikamenten-Kühltasche", "text": "die Medikamenten-Kühltasche" }
           ]
         }
       ]
@@ -70,50 +73,55 @@
     {
       "id": "erstkontakt",
       "title": "Erstkontakt und erste Beurteilung",
+      "prefix": "Beim Erstkontakt haben wir ",
       "type": "multiple",
       "options": [
-        { "id": "erstgespraech", "label": "Erstgespräch", "text": "Erstgespräch mit dem Patienten geführt" },
-        { "id": "abcde", "label": "Beurteilung nach ABCDE", "text": "Erstbeurteilung nach ABCDE durchgeführt" },
-        { "id": "paediatrisches_dreieck", "label": "Pädiatrisches Beurteilungsdreieck", "text": "Pädiatrisches Beurteilungsdreieck durchgeführt" }
+        { "id": "erstgespraech", "label": "Erstgespräch", "text": "ein Erstgespräch mit dem Patienten geführt" },
+        { "id": "abcde", "label": "Beurteilung nach ABCDE", "text": "den Patienten nach dem ABCDE-Schema beurteilt" },
+        { "id": "paediatrisches_dreieck", "label": "Pädiatrisches Beurteilungsdreieck", "text": "das pädiatrische Beurteilungsdreieck angewendet" }
       ]
     },
     {
       "id": "anamnese_untersuchung",
       "title": "Anamnese und weitere Untersuchung",
+      "prefix": "Ergänzend haben wir ",
       "type": "multiple",
       "options": [
-        { "id": "sampler", "label": "SAMPLER-Anamnese", "text": "SAMPLER-Anamnese erhoben" },
-        { "id": "anamnese_patient", "label": "Weiteres Gespräch mit Patient", "text": "Weiteres Anamnesegespräch mit dem Patienten geführt" },
-        { "id": "anamnese_angehoerige", "label": "Anamnesegespräch mit Angehörigen", "text": "Anamnesegespräch mit Angehörigen geführt" }
+        { "id": "sampler", "label": "SAMPLER-Anamnese", "text": "weitere Informationen nach dem SAMPLER-Schema erhoben" },
+        { "id": "anamnese_patient", "label": "Weiteres Gespräch mit Patient", "text": "erneut mit dem Patienten gesprochen" },
+        { "id": "anamnese_angehoerige", "label": "Anamnesegespräch mit Angehörigen", "text": "ergänzende Informationen bei Angehörigen eingeholt" }
       ]
     },
     {
       "id": "vitalwerte",
       "title": "Vitalwerterhebung",
+      "prefix": "Zur Erhebung der Vitalwerte haben wir ",
       "type": "multiple",
       "options": [
-        { "id": "ekg", "label": "EKG", "text": "EKG erhoben" },
-        { "id": "pulsoxymetrie", "label": "Pulsoxymetrie", "text": "Pulsoxymetrie durchgeführt" },
-        { "id": "blutdruck", "label": "Blutdruckmessung", "text": "Blutdruck gemessen" },
-        { "id": "kapnographie", "label": "Kapnographie", "text": "Kapnographie durchgeführt" },
-        { "id": "blutzucker", "label": "Blutzuckermessung", "text": "Blutzucker gemessen" },
-        { "id": "temperatur", "label": "Temperaturmessung", "text": "Temperatur gemessen" }
+        { "id": "ekg", "label": "EKG", "text": "ein EKG aufgezeichnet" },
+        { "id": "pulsoxymetrie", "label": "Pulsoxymetrie", "text": "eine Pulsoxymetrie durchgeführt" },
+        { "id": "blutdruck", "label": "Blutdruckmessung", "text": "den Blutdruck gemessen" },
+        { "id": "kapnographie", "label": "Kapnographie", "text": "eine Kapnographie durchgeführt" },
+        { "id": "blutzucker", "label": "Blutzuckermessung", "text": "den Blutzucker bestimmt" },
+        { "id": "temperatur", "label": "Temperaturmessung", "text": "die Körpertemperatur gemessen" }
       ]
     },
     {
       "id": "therapiemassnahmen",
       "title": "Weitere Therapiemaßnahmen",
-      "groupJoiner": "; ",
+      "groupJoiner": ". ",
       "groups": [
         {
           "id": "massnahmen",
           "label": "Maßnahmen",
           "type": "multiple",
+          "joiner": ". ",
+          "conjunction": ". ",
           "options": [
-            { "id": "keine_weiteren_massnahmen", "label": "Keine weiteren Therapiemaßnahmen erforderlich", "text": "Keine weiteren Therapiemaßnahmen erforderlich", "exclusive": true },
-            { "id": "wundversorgung", "label": "Wundversorgung durchgeführt", "text": "Wundversorgung durchgeführt" },
-            { "id": "ganzkoerperimmobilisation", "label": "Ganzkörperimmobilisation mit Vakuummatratze", "text": "Ganzkörperimmobilisation mit Vakuummatratze durchgeführt" },
-            { "id": "extremitaetenschienung", "label": "Extremitätenschienung", "text": "Extremitätenschienung durchgeführt" },
+            { "id": "keine_weiteren_massnahmen", "label": "Keine weiteren Therapiemaßnahmen erforderlich", "text": "Es waren keine weiteren Maßnahmen erforderlich", "exclusive": true },
+            { "id": "wundversorgung", "label": "Wundversorgung durchgeführt", "text": "Die Wunde wurde versorgt" },
+            { "id": "ganzkoerperimmobilisation", "label": "Ganzkörperimmobilisation mit Vakuummatratze", "text": "Der Patient wurde mit einer Vakuummatratze immobilisiert" },
+            { "id": "extremitaetenschienung", "label": "Extremitätenschienung", "text": "Die betroffene Extremität wurde geschient" },
             { "id": "sop", "label": "Behandlung nach SOP durchgeführt", "text": "" }
           ]
         },
@@ -121,29 +129,28 @@
           "id": "sop_auswahl",
           "label": "SOP auswählen",
           "type": "multiple",
-          "prefix": "Behandlung nach passender SOP durchgeführt (",
-          "suffix": ")",
+          "prefix": "Die Behandlung erfolgte nach der SOP für ",
           "joiner": ", ",
           "showWhen": { "groupId": "massnahmen", "optionId": "sop" },
           "options": [
-            { "id": "anaphylaxie", "label": "Anaphylaxie", "text": "Anaphylaxie" },
-            { "id": "atemwegsobstruktion", "label": "Atemwegsobstruktion", "text": "Atemwegsobstruktion" },
-            { "id": "acs", "label": "Akutes Koronarsyndrom (ACS)", "text": "Akutes Koronarsyndrom (ACS)" },
+            { "id": "anaphylaxie", "label": "Anaphylaxie", "text": "die Anaphylaxie" },
+            { "id": "atemwegsobstruktion", "label": "Atemwegsobstruktion", "text": "die Atemwegsobstruktion" },
+            { "id": "acs", "label": "Akutes Koronarsyndrom (ACS)", "text": "ein akutes Koronarsyndrom (ACS)" },
             { "id": "tachykardie", "label": "Tachykardie", "text": "Tachykardie" },
             { "id": "bradykardie", "label": "Bradykardie", "text": "Bradykardie" },
             { "id": "volumenmangel", "label": "Volumenmangel", "text": "Volumenmangel" },
-            { "id": "unstillbare_blutung", "label": "Unstillbare Blutung", "text": "unstillbare Blutung" },
+            { "id": "unstillbare_blutung", "label": "Unstillbare Blutung", "text": "eine unstillbare Blutung" },
             { "id": "hypotonie", "label": "Hypotonie bei Erkrankungen", "text": "Hypotonie bei Erkrankungen" },
             { "id": "hypertonie", "label": "Hypertonie bei Erkrankungen", "text": "Hypertonie bei Erkrankungen" },
-            { "id": "schlaganfall", "label": "Schlaganfall", "text": "Schlaganfall" },
-            { "id": "krampfanfall", "label": "Krampfanfall", "text": "Krampfanfall" },
+            { "id": "schlaganfall", "label": "Schlaganfall", "text": "einen Schlaganfall" },
+            { "id": "krampfanfall", "label": "Krampfanfall", "text": "einen Krampfanfall" },
             { "id": "hypoglykaemie", "label": "Hypoglykämie", "text": "Hypoglykämie" },
             { "id": "hyperglykaemie", "label": "Hyperglykämie", "text": "Hyperglykämie" },
             { "id": "intoxikation", "label": "Intoxikation", "text": "Intoxikation" },
             { "id": "fieber", "label": "Fieber", "text": "Fieber" },
-            { "id": "leichte_schmerzen_mildes_fieber", "label": "Leichte Schmerzen und mildes Fieber", "text": "Leichte Schmerzen und mildes Fieber" },
-            { "id": "mittlere_starke_schmerzen", "label": "Mittlere und starke Schmerzen", "text": "Mittlere und starke Schmerzen" },
-            { "id": "schmerzen_schweres_trauma", "label": "Schmerzen beim schweren Trauma", "text": "Schmerzen beim schweren Trauma" }
+            { "id": "leichte_schmerzen_mildes_fieber", "label": "Leichte Schmerzen und mildes Fieber", "text": "leichte Schmerzen und mildes Fieber" },
+            { "id": "mittlere_starke_schmerzen", "label": "Mittlere und starke Schmerzen", "text": "mittlere und starke Schmerzen" },
+            { "id": "schmerzen_schweres_trauma", "label": "Schmerzen beim schweren Trauma", "text": "Schmerzen bei einem schweren Trauma" }
           ]
         }
       ]
@@ -151,18 +158,20 @@
     {
       "id": "weitere_informationen",
       "title": "Weitere Informationsquellen",
+      "prefix": "Zur Informationsgewinnung nutzten wir ",
+      "groupJoiner": ", ",
       "type": "multiple",
       "options": [
-        { "id": "arztbriefe", "label": "Alte Arztbriefe einbezogen", "text": "Vorliegende Arztbriefe in die Informationsgewinnung einbezogen" },
-        { "id": "auskunft_angehoerige", "label": "Auskunft durch Angehörige", "text": "Zusätzliche Auskunft durch Angehörige eingeholt" },
-        { "id": "auskunft_pflegepersonal", "label": "Auskunft durch Pflegepersonal", "text": "Zusätzliche Auskunft durch Pflegepersonal eingeholt" },
-        { "id": "weitere_unterlagen", "label": "Weitere Unterlagen", "text": "Weitere vorliegende Unterlagen einbezogen" }
+        { "id": "arztbriefe", "label": "Alte Arztbriefe einbezogen", "text": "vorliegende Arztbriefe" },
+        { "id": "auskunft_angehoerige", "label": "Auskunft durch Angehörige", "text": "Angaben der Angehörigen" },
+        { "id": "auskunft_pflegepersonal", "label": "Auskunft durch Pflegepersonal", "text": "Angaben des Pflegepersonals" },
+        { "id": "weitere_unterlagen", "label": "Weitere Unterlagen", "text": "weitere Unterlagen" }
       ]
     },
     {
       "id": "aufklaerung",
       "title": "Aufklärung des Patienten",
-      "prefix": "Patient über folgende Punkte aufgeklärt: ",
+      "prefix": "Der Patient wurde über folgende Punkte aufgeklärt: ",
       "groupJoiner": ", ",
       "groups": [
         {
@@ -170,11 +179,11 @@
           "label": "Aufklärungspunkte",
           "type": "multiple",
           "options": [
-            { "id": "untersuchungsergebnisse", "label": "Untersuchungsergebnisse", "text": "Untersuchungsergebnisse" },
-            { "id": "ausbildungsstand", "label": "Ausbildungsstand des RD-Teams", "text": "Ausbildungsstand des RD-Teams" },
+            { "id": "untersuchungsergebnisse", "label": "Untersuchungsergebnisse", "text": "die Untersuchungsergebnisse" },
+            { "id": "ausbildungsstand", "label": "Ausbildungsstand des RD-Teams", "text": "den Ausbildungsstand des RD-Teams" },
             { "id": "versorgungsstellen", "label": "Alternative Versorgungsstellen", "text": "alternative Versorgungsstellen" },
             { "id": "konsequenzen", "label": "Mögliche Konsequenzen der Entscheidung", "text": "mögliche Konsequenzen der Entscheidung" },
-            { "id": "weiteres_vorgehen", "label": "Weiteres Vorgehen", "text": "weiteres Vorgehen" }
+            { "id": "weiteres_vorgehen", "label": "Weiteres Vorgehen", "text": "das weitere Vorgehen" }
           ]
         }
       ]
@@ -182,110 +191,147 @@
     {
       "id": "weiterer_verlauf",
       "title": "Weiterer Verlauf",
-      "groupJoiner": "; ",
+      "groupJoiner": ". ",
       "groups": [
         {
           "id": "entscheidung",
           "label": "Transportentscheidung",
           "type": "single",
           "options": [
-            { "id": "transport", "label": "Transport", "text": "Transport ins Krankenhaus durchgeführt" },
-            { "id": "kein_transport", "label": "Kein Transport", "text": "Kein Transport durchgeführt" }
+            { "id": "transport", "label": "Transport", "text": "Der Patient wurde ins Krankenhaus transportiert" },
+            { "id": "kein_transport", "label": "Kein Transport", "text": "Es erfolgte kein Transport" },
+            { "id": "uebergabe_andere_einsatzmittel", "label": "Übergabe an anderes Einsatzmittel", "text": "" }
+          ]
+        },
+        {
+          "id": "anderes_einsatzmittel",
+          "label": "Art des Einsatzmittels",
+          "type": "single",
+          "prefix": "Aus einsatztaktischen Gründen wurde der Patient an einen ",
+          "suffix": " übergeben",
+          "showWhen": { "groupId": "entscheidung", "optionId": "uebergabe_andere_einsatzmittel" },
+          "options": [
+            { "id": "bktw", "label": "BKTW", "text": "BKTW" },
+            { "id": "ktw_b", "label": "KTW-B", "text": "KTW-B" },
+            { "id": "ktw", "label": "KTW", "text": "KTW" },
+            { "id": "rtw", "label": "RTW", "text": "RTW" }
+          ]
+        },
+        {
+          "id": "uebergabe_transportierende_mannschaft",
+          "label": "Erfolgte eine Übergabe an die transportierende Mannschaft?",
+          "type": "single",
+          "showWhen": { "groupId": "entscheidung", "optionId": "uebergabe_andere_einsatzmittel" },
+          "options": [
+            { "id": "uebergabe_erfolgt", "label": "Ja", "text": "Die Übergabe an die transportierende Mannschaft erfolgte" },
+            { "id": "uebergabe_nicht_erfolgt", "label": "Nein", "text": "Eine Übergabe an die transportierende Mannschaft erfolgte nicht" }
           ]
         },
         {
           "id": "transferart",
           "label": "Transfer zum RTW",
           "type": "single",
+          "prefix": "Der Transfer zum RTW erfolgte ",
           "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
           "options": [
-            { "id": "zu_fuss", "label": "Zu Fuß", "text": "Transfer zum RTW zu Fuß erfolgt" },
-            { "id": "trage", "label": "Mit der Trage", "text": "Transfer zum RTW mit der Trage erfolgt" },
-            { "id": "tragstuhl", "label": "Mit dem Tragstuhl", "text": "Transfer zum RTW mit dem Tragstuhl erfolgt" }
+            { "id": "zu_fuss", "label": "Zu Fuß", "text": "zu Fuß" },
+            { "id": "trage", "label": "Mit der Trage", "text": "mit der Trage" },
+            { "id": "tragstuhl", "label": "Mit dem Tragstuhl", "text": "mit dem Tragstuhl" }
           ]
         },
         {
           "id": "fahrt",
           "label": "Transportverlauf",
           "type": "multiple",
+          "joiner": ". ",
+          "conjunction": ". ",
           "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
           "options": [
-            { "id": "fahrt_ohne_komplikationen", "label": "Ohne Komplikationen", "text": "Transport ohne Komplikationen" },
-            { "id": "fahrt_monitoring", "label": "Unter Monitoring", "text": "Transport unter Monitoring" },
-            { "id": "fahrt_schwebetisch", "label": "Mit Schwebetisch", "text": "Transport unter Verwendung des Schwebetisches" }
+            { "id": "fahrt_ohne_komplikationen", "label": "Ohne Komplikationen", "text": "Der Transport verlief komplikationslos" },
+            { "id": "fahrt_monitoring", "label": "Unter Monitoring", "text": "Der Patient wurde während der Fahrt kontinuierlich überwacht" },
+            { "id": "fahrt_schwebetisch", "label": "Mit Schwebetisch", "text": "Während der Fahrt kam der Schwebetisch zum Einsatz" }
           ]
         },
         {
           "id": "transport_handlungen",
           "label": "Handlungen während des Transports",
           "type": "multiple",
+          "joiner": ". ",
+          "conjunction": ". ",
           "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
           "options": [
-            { "id": "sampler_transport", "label": "SAMPLER-Anamnese", "text": "SAMPLER-Anamnese während des Transports erhoben" },
-            { "id": "dokumentation_transport", "label": "Dokumentation", "text": "Dokumentation während des Transports durchgeführt" }
+            { "id": "sampler_transport", "label": "SAMPLER-Anamnese", "text": "Während des Transports wurde eine SAMPLER-Anamnese erhoben" },
+            { "id": "dokumentation_transport", "label": "Dokumentation", "text": "Die Dokumentation wurde während des Transports fortgeführt" }
           ]
         },
         {
           "id": "angehoerige_begleiten",
           "label": "Begleiten Angehörige den Transport?",
           "type": "single",
+          "prefix": "Angehörige ",
           "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
           "options": [
-            { "id": "begleitung_ja", "label": "Ja", "text": "Angehörige begleiteten den Transport" },
-            { "id": "begleitung_nein", "label": "Nein", "text": "Keine Begleitung durch Angehörige" }
+            { "id": "begleitung_ja", "label": "Ja", "text": "begleiteten den Patienten" },
+            { "id": "begleitung_nein", "label": "Nein", "text": "begleiteten den Patienten nicht" }
           ]
         },
         {
           "id": "transport_sosi",
           "label": "Sondersignal am Transport?",
           "type": "single",
+          "prefix": "Der Transport erfolgte ",
           "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
           "options": [
-            { "id": "sondersignal", "label": "Transport mit Sondersignal", "text": "Transport mit Sondersignal" },
-            { "id": "ohne_sondersignal", "label": "Transport ohne Sondersignal", "text": "Transport ohne Sondersignal" }
+            { "id": "sondersignal", "label": "Transport mit Sondersignal", "text": "mit Sondersignal" },
+            { "id": "ohne_sondersignal", "label": "Transport ohne Sondersignal", "text": "ohne Sondersignal" }
           ]
         },
         {
           "id": "zustand_transport",
           "label": "Patientenzustand während des Transports",
           "type": "single",
+          "prefix": "Während des Transports ",
           "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
           "options": [
-            { "id": "zustand_unveraendert", "label": "Unverändert", "text": "Patientenzustand während des Transports unverändert" },
-            { "id": "zustand_veraendert", "label": "Verändert", "text": "Patientenzustand während des Transports verändert" }
+            { "id": "zustand_unveraendert", "label": "Unverändert", "text": "blieb der Zustand des Patienten unverändert" },
+            { "id": "zustand_veraendert", "label": "Verändert", "text": "veränderte sich der Zustand des Patienten" }
           ]
         },
         {
           "id": "umlagerung",
           "label": "Umlagerung",
           "type": "multiple",
+          "joiner": ". ",
+          "conjunction": ". ",
           "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
           "options": [
-            { "id": "wartebereich", "label": "Patient setzt sich in den Warteraum", "text": "Patient setzt sich in den Warteraum" },
-            { "id": "rollstuhl", "label": "Patient erhält Rollstuhl", "text": "Patient in den Rollstuhl gesetzt" },
-            { "id": "krankenhausbett", "label": "Patient erhält Krankenhausbett", "text": "Patient auf das Krankenhausbett umgelagert" },
-            { "id": "umlagerung_hilfe", "label": "Patient benötigt beim Umlagern Hilfe", "text": "Patient benötigt beim Umlagern Hilfe" }
+            { "id": "wartebereich", "label": "Patient setzt sich in den Warteraum", "text": "Der Patient setzte sich in den Wartebereich" },
+            { "id": "rollstuhl", "label": "Patient erhält Rollstuhl", "text": "Der Patient wurde in einen Rollstuhl gesetzt" },
+            { "id": "krankenhausbett", "label": "Patient erhält Krankenhausbett", "text": "Der Patient wurde auf ein Krankenhausbett umgelagert" },
+            { "id": "umlagerung_hilfe", "label": "Patient benötigt beim Umlagern Hilfe", "text": "Der Patient benötigte Unterstützung beim Umlagern" }
           ]
         },
         {
           "id": "uebergabe_empfaenger",
           "label": "Übergabe an",
           "type": "single",
+          "prefix": "Im Krankenhaus erfolgte die Übergabe an ",
           "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
           "options": [
-            { "id": "uebergabe_arzt", "label": "Arzt", "text": "Übergabe an den Arzt erfolgt" },
-            { "id": "uebergabe_dgkp", "label": "DGKP", "text": "Übergabe an die DGKP erfolgt" },
-            { "id": "uebergabe_pflegepersonal", "label": "Weiteres Pflegepersonal", "text": "Übergabe an das weitere Pflegepersonal erfolgt" }
+            { "id": "uebergabe_arzt", "label": "Arzt", "text": "den Arzt" },
+            { "id": "uebergabe_dgkp", "label": "DGKP", "text": "die DGKP" },
+            { "id": "uebergabe_pflegepersonal", "label": "Weiteres Pflegepersonal", "text": "das Pflegepersonal" }
           ]
         },
         {
           "id": "uebergabe_wartezeit",
           "label": "Lange Wartezeit bei der Übergabe?",
           "type": "single",
+          "prefix": "Bei der Übergabe kam es zu ",
           "showWhen": { "groupId": "entscheidung", "optionId": "transport" },
           "options": [
-            { "id": "wartezeit_lang", "label": "Ja", "text": "Lange Wartezeit bei der Übergabe" },
-            { "id": "wartezeit_nicht_lang", "label": "Nein", "text": "Keine lange Wartezeit bei der Übergabe" }
+            { "id": "wartezeit_lang", "label": "Ja", "text": "einer langen Wartezeit" },
+            { "id": "wartezeit_nicht_lang", "label": "Nein", "text": "keiner längeren Wartezeit" }
           ]
         },
         {
@@ -294,46 +340,51 @@
           "type": "single",
           "showWhen": { "groupId": "entscheidung", "optionId": "kein_transport" },
           "options": [
-            { "id": "transport_angeraten", "label": "Transport angeraten, abgelehnt", "text": "RD-Team rät zum Transport; Patient entscheidet sich nach Aufklärung dagegen" },
-            { "id": "belassung_empfohlen", "label": "Belassung empfohlen", "text": "RD-Team empfiehlt die Belassung; Patient verbleibt vor Ort" }
+            { "id": "transport_angeraten", "label": "Transport angeraten, abgelehnt", "text": "Der Patient lehnte den empfohlenen Transport nach erfolgter Aufklärung ab" },
+            { "id": "belassung_empfohlen", "label": "Belassung empfohlen", "text": "Das RD-Team empfahl die Belassung vor Ort; der Patient verblieb dort" }
           ]
         },
         {
           "id": "retts_belassung",
           "label": "Beurteilung nach RETTS",
           "type": "single",
+          "prefix": "Der Patient wurde nach ",
           "showWhen": { "groupId": "entscheidung", "optionId": "kein_transport" },
           "options": [
-            { "id": "retts_beurteilt", "label": "Patient nach RETTS beurteilt", "text": "Patient nach RETTS beurteilt" }
+            { "id": "retts_beurteilt", "label": "Patient nach RETTS beurteilt", "text": "RETTS beurteilt" }
           ]
         },
         {
           "id": "zurechnungsfaehigkeit",
           "label": "Ist der Patient zurechnungsfähig?",
           "type": "single",
+          "prefix": "Der Patient wurde als ",
           "showWhen": { "groupId": "entscheidung", "optionId": "kein_transport" },
           "options": [
-            { "id": "zurechnungsfaehig", "label": "Ja", "text": "Patient als zurechnungsfähig eingeschätzt" },
-            { "id": "nicht_zurechnungsfaehig", "label": "Nein", "text": "Patient als nicht zurechnungsfähig eingeschätzt" }
+            { "id": "zurechnungsfaehig", "label": "Ja", "text": "zurechnungsfähig eingeschätzt" },
+            { "id": "nicht_zurechnungsfaehig", "label": "Nein", "text": "nicht zurechnungsfähig eingeschätzt" }
           ]
         },
         {
           "id": "weitere_uebergabe",
           "label": "Weitere Betreuung übergeben an",
           "type": "multiple",
+          "joiner": ". ",
+          "conjunction": ". ",
           "showWhen": { "groupId": "entscheidung", "optionId": "kein_transport" },
           "options": [
-            { "id": "angehoerige_uebernahme", "label": "Angehörige", "text": "Weitere Betreuung an Angehörige übergeben" },
-            { "id": "pflegepersonal_uebernahme", "label": "Pflegepersonal", "text": "Weitere Betreuung an das Pflegepersonal übergeben" },
-            { "id": "patient_bleibt", "label": "Patient verbleibt vor Ort", "text": "Patient verbleibt vor Ort" }
+            { "id": "angehoerige_uebernahme", "label": "Angehörige", "text": "Die weitere Betreuung übernahmen Angehörige" },
+            { "id": "pflegepersonal_uebernahme", "label": "Pflegepersonal", "text": "Die weitere Betreuung übernahm das Pflegepersonal" },
+            { "id": "patient_bleibt", "label": "Patient verbleibt vor Ort", "text": "Der Patient verblieb vor Ort" }
           ]
         },
         {
           "id": "einsatzende",
           "label": "Abschluss",
           "type": "single",
+          "prefix": "Der Einsatz wurde ",
           "options": [
-            { "id": "einsatzende", "label": "Einsatzende", "text": "Einsatzende" }
+            { "id": "einsatzende", "label": "Einsatzende", "text": "beendet" }
           ]
         }
       ]

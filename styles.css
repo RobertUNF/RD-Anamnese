@@ -56,9 +56,20 @@ body {
   font-size: clamp(1.8rem, 5vw, 2.6rem);
 }
 
+.home-groups {
+  display: grid;
+  gap: clamp(28px, 5vh, 48px);
+}
+
+.home-group-title {
+  margin: 0 0 16px;
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+  font-weight: 680;
+}
+
 .app-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, clamp(148px, 21vw, 290px)), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, clamp(148px, 21vw, 290px)), 1fr));
   gap: clamp(14px, 2vw, 26px);
   width: 100%;
   align-content: start;
@@ -457,7 +468,21 @@ h1 {
 
 .page-navigation {
   display: grid;
-  gap: 6px;
+  gap: 20px;
+}
+
+.page-navigation-group {
+  display: grid;
+  gap: 4px;
+}
+
+.page-navigation-title {
+  margin: 0 10px 4px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .page-link {

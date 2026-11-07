@@ -1,7 +1,7 @@
 {
   "schemaHinweis": "Jede Kategorie hat type 'single' oder 'multiple', oder mehrere groups mit eigenem type. Optionen: id, label (Button), text (Baustein). exclusive: true wählt die Option allein und hebt andere der Gruppe auf. showWhen blendet eine Gruppe nur ein, wenn in groupId die optionId gewählt ist.",
   "meta": {
-    "title": "RD-intern",
+    "title": "RD-Intern",
     "subtitle": "Internistischer Einsatz · körperliche Untersuchung",
     "paragraphPrefix": "Status praesens: ",
     "categoryJoiner": ". ",

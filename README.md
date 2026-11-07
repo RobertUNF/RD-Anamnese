@@ -14,9 +14,9 @@ Danach im Browser `http://localhost:5173` öffnen.
 
 ## Katalog anpassen
 
-Die Navigation steht in `navigation.json`. Jeder Eintrag verweist über `file` auf einen eigenen Seitenkatalog. Füge dort eine Seite mit eindeutiger `id`, sichtbarem `label` und JSON-Datei hinzu; die Datei folgt demselben Format wie `kategorien.json`.
+Die Navigation steht in `navigation.json`. Jeder Eintrag verweist über `file` auf einen eigenen Seitenkatalog und wird über `group` der Startseiten-Gruppe `rettungsdienst` oder `klinik` zugeordnet. Füge dort eine Seite mit eindeutiger `id`, sichtbarem `label`, Gruppe und JSON-Datei hinzu; die Datei folgt demselben Format wie `kategorien.json`.
 
-Die vorhandenen Seitenkataloge sind `kategorien.json` (RD-intern), `rd-advanced.json` (RD-trauma) und `klinischer-status.json`. Auswahlstände werden pro Seite getrennt im Browser gespeichert.
+Die Startseite gruppiert RD-Seiten unter „Rettungsdienst“ und MED-Seiten unter „Klinik“. Die sichtbaren Seitennamen beginnen entsprechend mit `RD-` bzw. `MED-`. Auswahlstände werden pro Seite getrennt im Browser gespeichert.
 
 Zugang: In `config.json` steht nur der SHA-256-Hash des Passworts (`auth.passwordHash`). Der Klartext gehört nicht in die Konfiguration.
 
@@ -27,3 +27,4 @@ Zugang: In `config.json` steht nur der SHA-256-Hash des Passworts (`auth.passwor
 - `exclusive`: bei Mehrfachauswahl schließt diese Option die übrigen aus (z. B. „unauffällig“)
 - `showWhen`: blendet eine Gruppe bedingt ein, z. B. `{ "groupId": "druckdolenz", "optionId": "ja" }`
 - `prefix` / `suffix` / `groupJoiner` / `categoryJoiner`: steuern den fertigen Satz
+- `joiner` trennt Einträge einer Mehrfachauswahl; `conjunction` verbindet den letzten Eintrag (Standard: „ und “)
