@@ -4,7 +4,7 @@
     "title": "RD-Verlauf",
     "subtitle": "Chronologischer Einsatzablauf",
     "paragraphPrefix": "Einsatzverlauf: ",
-    "categoryJoiner": " // ",
+    "categoryJoiner": ". ",
     "paragraphSuffix": "."
   },
   "categories": [
@@ -182,7 +182,7 @@
     {
       "id": "weiterer_verlauf",
       "title": "Weiterer Verlauf",
-      "groupJoiner": " // ",
+      "groupJoiner": "; ",
       "groups": [
         {
           "id": "entscheidung",

@@ -4,6 +4,9 @@ const AUTH_STORAGE = "rd-doc-auth";
 const els = {
   title: document.getElementById("title"),
   subtitle: document.getElementById("subtitle"),
+  home: document.getElementById("home-screen"),
+  appGrid: document.getElementById("app-grid"),
+  pageScreen: document.getElementById("page-screen"),
   categories: document.getElementById("categories"),
   output: document.getElementById("output"),
   progress: document.getElementById("progress"),
@@ -166,6 +169,9 @@ function renderCategory(category) {
 }
 
 function render() {
+  els.home.hidden = true;
+  els.pageScreen.hidden = false;
+  document.body.classList.remove("home-active");
   const categories = catalog.categories.map(normalizeCategory);
   els.title.textContent = catalog.meta?.title ?? "Status praesens";
   document.title = els.title.textContent;
@@ -189,16 +195,66 @@ function setSidebarOpen(open) {
 }
 
 function renderNavigation() {
+  const homeButton = document.createElement("button");
+  homeButton.type = "button";
+  homeButton.className = "page-link";
+  homeButton.textContent = "Startseite";
+  homeButton.setAttribute("aria-current", activePage === null ? "page" : "false");
+  homeButton.addEventListener("click", showHome);
+
   const links = navigation.pages.map((page) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "page-link";
     button.textContent = page.label;
-    button.setAttribute("aria-current", page.id === activePage.id ? "page" : "false");
+    button.setAttribute("aria-current", page.id === activePage?.id ? "page" : "false");
     button.addEventListener("click", () => selectPage(page));
     return button;
   });
-  els.navigation.replaceChildren(...links);
+  els.navigation.replaceChildren(homeButton, ...links);
+}
+
+function renderHome() {
+  const icons = {
+    "rd-intern": "fa-notes-medical",
+    "rd-trauma": "fa-bandage",
+    "klinischer-status": "fa-stethoscope",
+    "rd-verlauf": "fa-route",
+    default: "fa-kit-medical"
+  };
+  const tiles = navigation.pages.map((page) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "app-tile";
+    button.dataset.page = page.id;
+    button.setAttribute("aria-label", `App ${page.label} öffnen`);
+
+    const icon = document.createElement("span");
+    icon.className = "app-icon";
+    icon.setAttribute("aria-hidden", "true");
+    const symbol = document.createElement("i");
+    symbol.className = `fa-solid ${icons[page.id] ?? icons.default}`;
+    icon.append(symbol);
+
+    const label = document.createElement("span");
+    label.className = "app-label";
+    label.textContent = page.label;
+
+    button.append(icon, label);
+    button.addEventListener("click", () => selectPage(page));
+    return button;
+  });
+  els.appGrid.replaceChildren(...tiles);
+}
+
+function showHome() {
+  activePage = null;
+  els.pageScreen.hidden = true;
+  els.home.hidden = false;
+  document.body.classList.add("home-active");
+  document.title = "RD Dokumentation";
+  renderNavigation();
+  setSidebarOpen(false);
 }
 
 async function selectPage(page) {
@@ -216,20 +272,46 @@ async function copyText() {
   const paragraph = buildParagraph();
   if (!paragraph) return;
   try {
-    await navigator.clipboard.writeText(paragraph);
-  } catch {
-    const field = document.createElement("textarea");
-    field.value = paragraph;
-    field.setAttribute("readonly", "");
-    field.style.position = "fixed";
-    field.style.opacity = "0";
-    document.body.append(field);
+    if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(paragraph);
+      } catch {
+        copyWithSelection(paragraph);
+      }
+    } else {
+      copyWithSelection(paragraph);
+    }
+    showCopyStatus("Kopiert");
+  } catch (error) {
+    console.error("Dokumentationstext konnte nicht kopiert werden.", error);
+    showCopyStatus("Kopieren fehlgeschlagen");
+  }
+}
+
+function copyWithSelection(text) {
+  const field = document.createElement("textarea");
+  field.value = text;
+  field.setAttribute("readonly", "");
+  field.style.position = "fixed";
+  field.style.top = "0";
+  field.style.left = "-9999px";
+  field.style.fontSize = "16px";
+  document.body.append(field);
+  let copied;
+  try {
+    field.focus({ preventScroll: true });
     field.select();
-    document.execCommand("copy");
+    field.setSelectionRange(0, field.value.length);
+    copied = document.execCommand("copy");
+  } finally {
     field.remove();
   }
+  if (!copied) throw new Error("Die Zwischenablage hat den Kopiervorgang abgelehnt.");
+}
+
+function showCopyStatus(message) {
   const original = els.copy.textContent;
-  els.copy.textContent = "Kopiert";
+  els.copy.textContent = message;
   setTimeout(() => {
     els.copy.textContent = original;
   }, 1400);
@@ -267,8 +349,8 @@ async function boot() {
     if (!response.ok) throw new Error("Navigation konnte nicht geladen werden.");
     return response.json();
   });
-  activePage = navigation.pages[0];
-  await selectPage(activePage);
+  renderHome();
+  showHome();
   els.copy.addEventListener("click", copyText);
   els.reset.addEventListener("click", reset);
   els.sidebarToggle.addEventListener("click", () => {

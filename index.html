@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Status praesens</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="locked">
@@ -27,14 +28,24 @@
       <nav id="page-navigation" class="page-navigation" aria-label="Seiten"></nav>
     </aside>
     <div class="app">
-      <header class="hero glass">
-        <p class="eyebrow" id="subtitle">Checkliste Dokumentation</p>
-        <h1 id="title">RD Basic</h1>
-        <p class="lede">
-          Befunde antippen — der Absatz wird unten automatisch zusammengesetzt.
-        </p>
-      </header>
-      <main id="categories" class="categories"></main>
+      <main class="home-screen" id="home-screen" hidden>
+        <header class="home-header">
+          <p class="eyebrow">RD Dokumentation</p>
+          <h1>Deine Einsatz-Apps</h1>
+          <p class="lede">Wähle eine Dokumentation aus.</p>
+        </header>
+        <section class="app-grid" id="app-grid" aria-label="Dokumentationsseiten"></section>
+      </main>
+      <div id="page-screen" hidden>
+        <header class="hero glass">
+          <p class="eyebrow" id="subtitle">Checkliste Dokumentation</p>
+          <h1 id="title">RD Basic</h1>
+          <p class="lede">
+            Befunde antippen — der Absatz wird unten automatisch zusammengesetzt.
+          </p>
+        </header>
+        <main id="categories" class="categories"></main>
+      </div>
     </div>
     <aside class="dock">
       <section class="output glass">
